@@ -13,9 +13,26 @@
 // 800 -> Heavy, Extra Bold
 // 900 -> Black
 
-@include font-face("GothamPro", "../fonts/GothaProBol/GothaProBol", $file-formats: eot woff ttf svg){
+@include font-face("GothamPro", "../fonts/GothaProBol/Gerbera Bold", $file-formats: eot woff ttf svg){
   font-style: normal;
   font-weight: bold;
+};
+@include font-face("GothamPro", "../fonts/GothaProBol/Gerbera Black", $file-formats: eot woff ttf svg){
+  font-style: normal;
+  font-weight: 700;
+};
+@include font-face("GothamPro", "../fonts/GothaProBol/Gerbera Light", $file-formats: eot woff ttf svg){
+  font-style: normal;
+  font-weight: 300;
+};
+@include font-face("GothamPro", "../fonts/GothaProBol/Gerbera Medium", $file-formats: eot woff ttf svg){
+  font-style: normal;
+  font-weight: 500;
+};
+
+@include font-face("GothamPro", "../fonts/GothaProBol/Gerbera", $file-formats: eot woff ttf svg){
+  font-style: normal;
+  font-weight: 400;
 };
 
 

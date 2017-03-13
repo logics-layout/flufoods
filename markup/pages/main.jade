@@ -1,0 +1,58 @@
+doctype html
+html(class="no-js", lang="ru")
+
+    include _mixin
+    include ../components/head/head
+    include ../components/header/header
+    include ../components/footer/footer
+    include ../components/modal/modal
+
+    head
+        //- start  block head
+        link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+        block head
+        - if(headData)
+            +head(headData)
+        - else
+            +head(head.defaults)
+        //- end  block head
+    body.page
+        |%=symbols=%
+
+        section.page__wrapper
+            +header(index)
+            -if(!breadcrumb)
+                .container
+                    br
+                    br
+                    ul.breadcrumb.not-styleLink
+                        li: a(href="#"): span Главная
+                        li: span О компании
+
+            //- Include your components here
+            //- start block content
+            block content
+            //- end block content
+
+
+            .page__buffer
+        .page__footer
+            +footer()
+
+        +modal()
+
+        a(href='#').linkTop.not-styleLink
+
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+        script svg4everybody();
+
+        script(src="%=static=%js/separate-js/bootstrap-select.min.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/dropdown.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/modal.js" type="text/javascript")
+        //- start block script
+        block script
+        //- end block script
+        //- Main scripts. You can replace it, but I recommend you to leave it here
+        script(src='%=static=%js/main%=hash=%%=min=%.js')
+

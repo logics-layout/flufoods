@@ -1,0 +1,42 @@
+html{
+  overflow-x: hidden;
+}
+body, html{
+  min-width: 320px;
+}
+
+@include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+
+}
+
+@include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+
+}
+
+@include my-media-query(min, map_get($grid-breakpoints, xs)) {
+
+}
+
+@include my-media-query(min, map_get($grid-breakpoints, sm)) {
+
+}
+
+@include my-media-query(min, map_get($grid-breakpoints, md)) {
+
+}
+
+@include my-media-query(min, map_get($grid-breakpoints, lg)) {
+
+}
+
+@include my-media-query(min, map_get($grid-breakpoints, xl)) {
+
+}
+
+@include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+
+}
+
+@include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+
+}

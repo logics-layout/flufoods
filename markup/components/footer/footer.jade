@@ -1,0 +1,49 @@
+mixin footer(data)
+    footer.footer.not-styleLink
+        .container
+            .row
+                .col-xs-6
+                    a(href="#").footer__logo: +img('assets/footer/logo', 'png')
+                    p.footer__text © ООО «Виго Смит» 2016
+                        br
+                        |Производство изделий из графита
+
+                .col-xs-6.text-right
+                    div(style="display: inline-block;vertical-align: middle;")
+                        a(href='#').copyright
+                            .copyright__title Разработка
+                                br
+                                |и продвижение сайта —
+                            .copyright__icon: +img('assets/footer/copyright', 'png')
+
+                    .footer__scrollTopBlock
+                        a(href='#').footer__scrollTop: +icon('top-arrow')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

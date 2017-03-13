@@ -1,0 +1,90 @@
+mixin header(data)
+    .header(class!=data).not-styleLink
+        .header__top
+            .container
+                .header__table
+                    .header__table-cell
+                        a(href="#").header__logo: +img('assets/header/logo', 'png')
+                    .header__table-cell
+                        .header__iconText
+                            .header__iconText-cell: +icon('label')
+                            .header__iconText-cell
+                                | Россия, г. Москва
+                                br
+                                | ул. Талалихина, 41 стр.14, офис 46
+                    .header__table-cell
+                        .header__iconText
+                            .header__iconText-cell: +icon('phone')
+                            .header__iconText-cell
+                                a(href='#').header__email vigosmith@gmail.com
+                                br
+                                a(href="#").header__phone +7 (495) 223-40-35
+                    .header__table-cell(style="width: 250px;").text-right
+                        button.btn.btn-grey.btn-ttu(data-toggle="modal", data-target="#callback") Закажите звонок
+        .header__bottom
+            .container
+                .row
+                    .col-xs-11
+                        ul.header__nav
+                            li: a(href='#'): span О компании
+                            li: a(href='#'): span Общая информация
+                            li: a(href='#'): span Производство
+                            li: a(href='#'): span Материалы
+                            li: a(href='#'): span Вопрос-ответ
+                            li: a(href='#'): span Контакты
+                            li.active: a(href='#'): span Бланк заказа
+                    .col-xs-1
+                        a(href="#").header__search: +icon('search')
+
+
+        - if(data)
+            .header__slider
+                button.slick-prev.slick-arrow: +icon('arrow-prev')
+                button.slick-next.slick-arrow: +icon('arrow-next')
+                .container
+                    .header__slider-el
+                        - for(var i =0; i<5;i++)
+                            .header__slider-section
+                                .row
+                                    .col-xs-7
+                                        .header__slider-title
+                                            span Производим
+                                            |изделия из графита
+                                        .header__slider-text Предприятие «ВИГО СМИТ» работает на рынке с 1995 г. Мы обладаем собственными производственными мощностями, в т.ч. станками с ЧПУ, позволяющими изготовить изделия любой сложности по вашим чертежам.
+                                        a(href='#').header__slider-link Подробнее
+                                    .col-xs-5
+                                        +img('content/header__slider/1', 'png')
+
+
+            .header__sliderDots
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

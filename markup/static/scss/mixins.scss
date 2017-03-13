@@ -1,0 +1,85 @@
+// Mixins.
+
+@mixin nl {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style: none;
+  list-style-position: outside;
+  li{
+    padding-left: 0;
+    &:after{
+      display: none;
+    }
+  }
+}
+
+@mixin btn-clear {
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+@mixin cf {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .lt-ie8 & {
+    zoom: 1;
+  }
+}
+
+@mixin blocks-justify {
+  text-align: justify;
+  text-justify: newspaper;
+}
+
+
+@mixin set-alpha($color){
+  //rgb(red($color), green($color), blue($color));
+}
+
+@mixin link-border-color($color){
+  border-bottom: 1px solid rgba(red($color), green($color), blue($color), 0.3);
+  &:focus{
+    border-color: $color;
+  }
+  &:hover{
+    border-color: rgba(red($color), green($color), blue($color), 0.6);
+  }
+}
+
+@mixin tr{
+  @include transition(all .2s);
+}
+
+@mixin my-media-query($param...) {
+  $type: null;
+  $value: null;
+
+  @if length($param) != 2 {
+    @warn 'ERROR! Wrong media query format!';
+  }
+
+  @each $item in $param {
+    @if $item == 'min' or $item == 'max' {
+      $type: $item;
+    } @else {
+      $value: $item;
+    }
+  }
+
+  @media screen and (#{$type}-width: $value) {
+    @content;
+  }
+}
+
+// You can add your own mixins here:

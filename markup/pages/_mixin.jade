@@ -1,0 +1,7 @@
+- var pathImg = "%=static=%img";
+mixin img(src, format)
+    - var format = format || "jpg"
+    img(src=pathImg + "/" + src + "." + format, id!=attributes.id, class!=attributes.class, style!=attributes.style, alt="", title='')
+
+mixin icon(iconName, className, iconWidth, iconHeight)
+    != jadeHelpers.Icon.call(locals, {iconName: iconName, className: className, iconWidth: iconWidth, iconHeight: iconHeight})

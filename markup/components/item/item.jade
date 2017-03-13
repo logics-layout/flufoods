@@ -1,0 +1,36 @@
+mixin itemBlock(discount)
+    a(href="#").item.item-block
+        span.item-img: +img('content/item/1')
+        span.item-desc
+            span.item-title: span Экскаватор TX 210 LC
+            span.item-text
+                | Автогрейдер ГС-14.02 предназначен для выполнения больших объемов землеройных и профилировочных работ, при строительстве и содержании дорог. ГС-14.02 комплектуется мощным двигателем 110 кВт и механической трансмиссией.
+                | 13,5 т, колёсная формула 1х2х3, двигатель ЯМЗ, 150 л.с., кабина ROPS-FOPS, ПЖД.
+
+
+mixin itemCol(discount)
+    a(href="#").item.item-col
+        span.item-img: +img('content/item/1')
+        span.item-title: span Экскаватор TX 210 LC
+        span.item-text
+            | - Экскаваторный ковш 0,18 м3
+            br
+            | - Погрузочный ковш 1 м3
+            br
+            | - Экскаваторное оборудование
+            br
+            |с телескопической рукоятью
+
+
+
+mixin item(num, _fn)
+    - if(!_fn) _fn = 'col'
+
+    - var discount = false
+
+    - if(num%2==0) discount = true
+
+    - if(_fn == 'col')
+        +itemCol(discount)
+    - else if(_fn == 'block')
+        +itemBlock(discount)

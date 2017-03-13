@@ -5,11 +5,45 @@ body, html{
   min-width: 320px;
 }
 
-@include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+@media screen and (max-width: 620px) {
+  .headerMobile {
+    &__basketBlock {
+      &-list {
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
 
+@include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .page__nav-list li a {
+    font-size: 18px;
+    padding: 17.5px 21px;
+  }
+  .page__wrapper {
+    &_show {
+      transform: translateX(280px);
+      transform: translate3d(280px, 0, 0);
+    }
+  }
+  .page__nav {
+    width: 280px;
+    left: -280px;
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .page__wrapper {
+    &_show {
+      transform: translateX(0px);
+      transform: translate3d(0px, 0, 0);
+    }
+  }
+  .page__nav {
+    display: none;
+  }
 
 }
 

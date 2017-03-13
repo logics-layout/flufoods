@@ -10,9 +10,205 @@
 @import "libraries/bootstrap/navs";
 @import "libraries/bootstrap/dropdowns";
 
+.db{
+  display: block;
+}
 
+.mobile-list-anim{
+  display: inline-block;
+  color: #000000;
+  //float: left;
+  z-index: 5;
+  width: 100%;
+  position: relative;
+  input[type="checkbox"]{
+    display: none;
+    &:checked {
+      & ~ .menuTopMobel {
+        .menu-mobile {
+          &-hamburger {
+            &.one {
+              -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+              transform: translate3d(0, 0, 0) rotate(45deg);
+            }
+            &.two {
+              -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+              transform: translate3d(0, 0, 0) scale(0.1, 1);
+            }
+            &.three {
+              -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+              transform: translate3d(0, 0, 0) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .menuTopMobel{
+    color: currentColor;
+    display: block;
+    text-align: left;
+    border-bottom: none;
+    border-top: none;
+    outline: none;
+    margin-bottom: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    .menu-icon{
+      fill: currentColor;
+      display: inline-block;
+      vertical-align: middle;
+      svg{
+        display: block;
+      }
+    }
+    .menu-mobile{
+      pointer-events: none;
+      background: transparent;
+      display: inline-block;
+      vertical-align: middle;
+      width: 24px;
+      height: 22px;
+      color: currentColor;
+      text-align: center;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      transition: transform ease-out 200ms;
+      &-hamburger{
+        width: 22px;
+        height: 4px;
+        background: currentColor;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -11px;
+        margin-top: -2px;
+        transition: transform 200ms;
+        border-radius: 20px;
+        &.one{
+          -webkit-transform: translate3d(0, -9px, 0);
+          transform: translate3d(0, -9px, 0);
+        }
+        &.two{
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+        &.three{
+          -webkit-transform: translate3d(0, 9px, 0);
+          transform: translate3d(0, 9px, 0);
+        }
+      }
+    }
+    .menu-text{
+      //margin-top: -4px;
+      //margin-right: 20px;
+      margin-top: 4px;
+      margin-left: 28px;
+      display: inline-block;
+      vertical-align: middle;
+      pointer-events: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+}
 
+.sections-border{
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  &-section{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    padding: 0 15px;
+    +*{
+      border-left: 1px solid #d2d2d2;
+    }
+  }
+}
 
+.list-link{
+  display: inline-block;
+  font-size: 0;
+  margin: -2px -7px;
+  &__section{
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2px 7px;
+  }
+}
+
+.count{
+  font-size: 0;
+  display: inline-block;
+  vertical-align: middle;
+  >*{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__btn{
+    @include btn-clear;
+    width: 16px;
+    height: 16px;
+    background-color: #04d958;
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 16px;
+    &_minus{}
+    &_plus{}
+  }
+  &__input{
+    @include btn-clear;
+    width: 23px;
+    text-align: center;
+    color: #0a0a0a;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: normal;
+    padding: 0 5px;
+  }
+  &_big{
+    .count__btn{
+      width: 20px;
+      height: 20px;
+      font-size: 18px;
+    }
+    .count__input{
+      font-size: 16px;
+      width: 29px;
+    }
+  }
+}
+
+.network{
+  @include nl;
+  font-size: 0;
+  margin: -5.5px;
+  li{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 5.5px;
+    a{
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border: 1px solid #d0d0d0;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 35px;
+    }
+  }
+}
 
 
 

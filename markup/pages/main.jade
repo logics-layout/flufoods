@@ -20,14 +20,24 @@ html(class="no-js", lang="ru")
         |%=symbols=%
 
         section.page__wrapper
+            .page__nav
+                ul.page__nav-list
+                    li: a(href="#") Меню
+                    li: a(href="#") Оплата и доставка
+                    li: a(href="#") Бонусная программа
+                    li: a(href="#") О Berrywood family
+                    li: a(href="#") Контакты
+            // start header
             +header(index)
-            -if(!breadcrumb)
-                .container
-                    br
-                    br
-                    ul.breadcrumb.not-styleLink
-                        li: a(href="#"): span Главная
-                        li: span О компании
+            // end header
+
+            //-if(!breadcrumb)
+            //    .container
+            //        br
+            //        br
+            //        ul.breadcrumb.not-styleLink
+            //            li: a(href="#"): span Главная
+            //            li: span О компании
 
             //- Include your components here
             //- start block content

@@ -3,10 +3,10 @@
 html, body {
   height: 100%;
   color: #4b4b4b;
-  font-family: "Myriad Pro", sans-serif;
+  font-family: Gerbera, sans-serif;
   font-size: 16px;
-  font-weight: 400;
-  line-height: 28px;
+  font-weight: 300;
+  line-height: 27px;
 }
 
 .page {
@@ -16,7 +16,13 @@ html, body {
 .page__wrapper {
   min-height: 100%;
   padding-bottom: 85px;
+  @include tr;
 
+  &_show{
+    transform: translateX(380px);
+    transform: translate3d(380px,0,0);
+    backface-visibility: hidden;
+  }
 }
 * html .page__wrapper {
     height: 100%;
@@ -30,6 +36,33 @@ body {
   //padding-top: 90px;
 }
 
+.page__nav{
+  width: 380px;
+  background-color: #5f5f5f;
+  position: absolute;
+  top: 0;
+  left: -380px;
+  height: 100%;
+  &-list{
+    @include nl;
+    li{
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      a{
+        display: block;
+        font-size: 24px;
+        font-weight: 300;
+        color: #fff;
+        padding: 26.5px 34px;
+        @include tr;
+        &:hover, &:focus{
+          text-decoration: none;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+}
 
 
 

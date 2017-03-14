@@ -1,5 +1,38 @@
 mixin footer(data)
     footer.footer.not-styleLink
+        .container
+            .footer__content
+                .footer__table
+                    .footer__table-cell
+                        .footer__nav
+                            ul
+                                li: a(href="#") Меню
+                                li: a(href="#") Оплата и доставка
+                                li: a(href="#") Бонусная программа
+                                li: a(href="#") О Berrywood Family
+                                li: a(href="#") Контакты
+                    .footer__table-cell
+                        ul.network.network_notBorder
+                            li: a(href="#"): +icon('facebook')
+                            li: a(href="#"): +icon('instagram')
+                            li: a(href="#"): +icon('vk')
+
+                hr
+
+                .row
+                    .col-lg-7
+                        p.footer__text В «Тануки» вас ждет лучшее и полное меню японской кухни – роллы, суши, сашими, теппан, детское меню, закуски, шашлычки, салаты, фирменные блюда и напитки. У нас только свежая еда – каждая порция готовится непосредственно перед подачей или отправкой гостю. Подкрепиться в «Тануки» можно вкусно и недорого, а бесплатная доставка еды работает оперативно даже ночью. Всего 90 минут, и горячий обед уже на столе. Чтобы заказать суши, роллы, сашими на дом или в офис, звоните нам по номеру 223-2-223.
+                        p.footer__text 2017 © Berrywood Family
+                    .col-lg-5
+                        .text-right.footer__rightBlock
+                            .footer__right.text-center
+                                .footer__logo
+                                    +icon('logoFooter')
+                                .footer__pay
+                                    p.footer__pay-title Мы принимаем
+                                    ul.footer__pay-list
+                                        li: i.s-visa
+                                        li: i.s-mastercard
 
 
 

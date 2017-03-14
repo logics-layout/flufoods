@@ -1,3 +1,86 @@
 .footer{
-
+  padding: 54px 0;
+  border-top: 1px solid #e5e5e5;
+  &__content{
+    background-color: #eeeeee;
+    border-radius: $border-radius;
+    padding: 40px 59px;
+    hr{
+      border-color: #d9d9d9;
+      margin: 30px 0;
+    }
+    .network{
+      white-space: nowrap;
+    }
+  }
+  &__nav{
+    ul{
+      @include nl;
+      font-size: 0;
+      margin: 0 -10.5px;
+      margin-bottom: -10px;
+      li{
+        display: inline-block;
+        a{
+          display: block;
+          color: black;
+          font-size: 23px;
+          font-weight: 500;
+          padding: 0 10.5px;
+        }
+      }
+    }
+  }
+  &__table{
+    display: table;
+    width: 100%;
+    &-cell{
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  &__text{
+    color: #b3b3b3;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 21px;
+    width: 675px;
+    max-width: 100%;
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__logo{
+    margin-bottom: 10px;
+    svg{
+      fill: #b5b4b4;
+      width: 92px;
+      height: 92px;
+    }
+  }
+  &__right{
+    display: inline-block;
+    padding-top: 50px;
+  }
+  &__pay{
+    &-title{
+      color: #b3b3b3;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 17px;
+      margin: 0;
+      margin-bottom: 4px;
+    }
+    &-list{
+      @include nl;
+      font-size: 0;
+      margin: -3.5px;
+      li{
+        padding: 3.5px;
+        display: inline-block;
+        font-size: 14px;
+      }
+    }
+  }
 }

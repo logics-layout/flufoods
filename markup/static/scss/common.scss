@@ -10,19 +10,19 @@ html, body {
 }
 
 .page {
+  @include tr;
+  &_show{
+    transform: translateX(380px);
+    transform: translate3d(380px,0,0);
+    backface-visibility: hidden;
+  }
 }
 
 
 .page__wrapper {
   min-height: 100%;
   padding-bottom: 85px;
-  @include tr;
 
-  &_show{
-    transform: translateX(380px);
-    transform: translate3d(380px,0,0);
-    backface-visibility: hidden;
-  }
 }
 * html .page__wrapper {
     height: 100%;

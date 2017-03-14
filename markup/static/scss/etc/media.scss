@@ -5,6 +5,20 @@ body, html{
   min-width: 320px;
 }
 
+@media screen and (max-width: 1256px) {
+  .footer {
+    &__nav {
+      ul {
+        li {
+          a {
+            font-size: 21px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 620px) {
   .headerMobile {
     &__basketBlock {
@@ -22,7 +36,7 @@ body, html{
     font-size: 18px;
     padding: 17.5px 21px;
   }
-  .page__wrapper {
+  .page {
     &_show {
       transform: translateX(280px);
       transform: translate3d(280px, 0, 0);
@@ -35,7 +49,18 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
-  .page__wrapper {
+  .footer{
+    &__content{
+      padding: 22px 28px;
+    }
+    &__rightBlock{
+      text-align: left;
+    }
+    &__right{
+      padding-top: 20px;
+    }
+  }
+  .page {
     &_show {
       transform: translateX(0px);
       transform: translate3d(0px, 0, 0);
@@ -68,9 +93,50 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
-
+  .footer{
+    border: none;
+    padding: 32px 0;
+    &__content{
+      margin: 0;
+    }
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
-
+  .footer{
+    &__content{
+      hr{
+        margin: 20px 0;
+      }
+    }
+    &__text{
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 16px;
+      margin-bottom: 15px;
+    }
+    &__nav{
+      ul{
+        margin: 0;
+        li{
+          display: block;
+          a{
+            padding: 4px 0;
+            font-size: 17px;
+            line-height: normal;
+          }
+        }
+      }
+    }
+    &__table{
+      display: flex;
+      flex-direction: column-reverse;
+      &-cell{
+        display: block;
+        +*{
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
 }

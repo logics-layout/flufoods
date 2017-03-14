@@ -164,6 +164,9 @@
     line-height: 16px;
     &_minus{}
     &_plus{}
+    &:hover{
+      background-color: #04be4d;
+    }
   }
   &__input{
     @include btn-clear;
@@ -205,7 +208,23 @@
       border: 1px solid #d0d0d0;
       border-radius: 50%;
       text-align: center;
-      line-height: 35px;
+      line-height: 37px;
+      @include tr;
+      svg{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &:hover{
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  &_notBorder{
+    li{
+      a{
+        border-color: transparent;
+
+      }
     }
   }
 }

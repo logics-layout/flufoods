@@ -151,8 +151,8 @@ if($.fn.selectpicker){
 // }
 
 var bottomToggleMenu = $('#bottomToggleMenu'),
-    pageWrapper = $('.page__wrapper'),
-    pageWrapperClassShow = 'page__wrapper_show';
+    pageWrapper = $('.page'),
+    pageWrapperClassShow = 'page_show';
 
 bottomToggleMenu.change(function () {
     var checked = this.checked;

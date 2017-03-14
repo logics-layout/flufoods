@@ -110,45 +110,6 @@ if($.fn.selectpicker){
         size: 7
     }).selectpicker('setStyle', 'btn', 'remove');
 }
-// if ($.fn.magnificPopup) {
-//     var magnificPopupObj = {
-//         delegate: 'a',
-//         type: 'image',
-//         tLoading: "",
-//         mainClass: "",
-//         gallery: {
-//             enabled: true,
-//             navigateByImgClick: true,
-//             preload: [0, 1]
-//         },
-//         image: {
-//             tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-//         },
-//         iframe: {
-//             // markup: '<div class="mfp-iframe-scaler">' +
-//             // '<div class="mfp-close"></div>' +
-//             // '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-//             // '</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
-//
-//             patterns: {
-//                 youtube: {
-//                     index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
-//
-//                     id: 'v=', // String that splits URL in a two parts, second part should be %id%
-//                     // Or null - full URL will be returned
-//                     // Or a function that should return %id%, for example:
-//                     // id: function(url) { return 'parsed id'; }
-//
-//                     src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe.
-//                 }
-//             }
-//         }
-//     };
-//
-//     $('.magnificPopup').each(function () {
-//         $(this).magnificPopup(magnificPopupObj);
-//     })
-// }
 
 var bottomToggleMenu = $('#bottomToggleMenu'),
     pageWrapper = $('.page'),
@@ -165,9 +126,66 @@ bottomToggleMenu.change(function () {
 });
 
 
+if (typeof google !== "undefined" && google !== null) {
+    var MapView = $(".maps-block").get(0);
+    var latlng = new google.maps.LatLng(52.4350352,103.987996,8.72);
+    var settings = {
+        zoom: 9,
+        center: latlng,
+        mapTypeControl: true,
+        mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+        navigationControl: true,
+        navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(MapView, settings);
+
+    var IrkCe = new google.maps.LatLng(52.2897502,104.339428);
+    var parkingMarker = new google.maps.Marker({
+        position: IrkCe,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title:"Автосвет Ксенон Сервис в Иркутске",
+        zIndex: 1
+    });
+}
 
 
+// формы
+function checkFocusInput(e) {
+    var classNameInputAnimActive = 'input-anim_active',
+        typeEvent = e?e.type:false,
+        input = null;
 
+    if(typeEvent!==false){
+        input = $(this);
+    }else{
+        input = $('.input-anim').find('.form-control');
+    }
+
+    input.each(function () {
+        var _this = $(this),
+            parent = _this.closest('.input-anim'),
+            value = _this.val().length;
+
+        if(parent[0]){
+            if(typeEvent == 'focus' || value > 0){
+                parent.addClass(classNameInputAnimActive)
+            }else if(typeEvent == 'blur' && value == 0){
+                parent.removeClass(classNameInputAnimActive)
+            }
+        }
+    });
+}
+
+checkFocusInput();
+$('.form-control').on('focus blur', checkFocusInput);
+
+$('[data-toggle="popover"]').popover({
+    trigger: 'hover',
+    // trigger: 'click',
+    container: 'body'
+});
 
 
 

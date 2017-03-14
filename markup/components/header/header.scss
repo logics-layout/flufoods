@@ -49,7 +49,7 @@
     }
     &:hover, &:focus{
       text-decoration: none;
-      color: #04d959;
+      color: $green;
     }
   }
   &__link{
@@ -100,7 +100,7 @@
           right: -8px;
           width: 20px;
           height: 20px;
-          background-color: #04d959;
+          background-color: $green;
           display: block;
           border-radius: 50%;
           font-size: 11px;
@@ -114,7 +114,7 @@
         }
       }
       &-title{
-        color: #04d959;
+        color: $green;
         font-size: 13px;
         font-weight: 900;
         line-height: normal;
@@ -185,7 +185,7 @@
       &-price{
         font-size: 17px;
         font-weight: 700;
-        color: #04d959;
+        color: $green;
       }
     }
     &-btn{
@@ -419,7 +419,7 @@
     &-btn{
       @include btn-clear;
       height: 53px;
-      background-color: #04d959;
+      background-color: $green;
       border-radius: 26px;
       color: white;
       font-size: 17px;
@@ -484,7 +484,7 @@
       font-weight: 900;
       width: 224px;
       height: 53px;
-      background-color: #04d959;
+      background-color: $green;
       border-radius: 27px;
     }
     &-bottom{
@@ -566,7 +566,7 @@
       &-price{
         font-size: 17px;
         font-weight: 700;
-        color: #04d959;
+        color: $green;
       }
       &-titleSub{
         font-size: 11px;

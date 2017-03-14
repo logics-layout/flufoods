@@ -21,8 +21,7 @@ html, body {
 
 .page__wrapper {
   min-height: 100%;
-  padding-bottom: 85px;
-
+  padding-bottom: 53px;
 }
 * html .page__wrapper {
     height: 100%;
@@ -64,5 +63,154 @@ body {
   }
 }
 
+.inner-banner{
+  height: 545px;
+  background-color: #eee;
+  display: table;
+  width: 100%;
+  border-radius: $border-radius;
+  background-size: cover;
+  background-position: center;
+  &__content{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__title{
+    color: white;
+    font-size: 84px;
+    font-weight: 900;
+    line-height: 79px;
+    margin: 0;
+  }
+}
+
+.img-berrywood{
+  img{
+    max-width: 100%;
+    width: 235px;
+    display: inline-block;
+  }
+}
+
+.inner-banner-list{
+  background-color: $green;
+  border-radius: $border-radius;
+  padding: 35px 45px;
+  overflow: hidden;
+  &__title{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  &__list{
+    @include nl;
+    font-size: 0;
+    margin: -20px -70px;
+    &-item{
+      display: inline-block;
+      color: white;
+      font-size: 23px;
+      font-weight: 300;
+      line-height: 28px;
+      fill: #fff;
+      width: 33.33%;
+      vertical-align: top;
+      padding: 20px  70px;
+      &-img{
+        margin-bottom: 30px;
+        max-width: 100%;
+      }
+      &-text{
+      }
+    }
+  }
+}
+
+.advantages-block{
+  margin: 0 auto;
+  width: 560px;
+  max-width: 100%;
+}
+
+.list-advantages{
+  display: table;
+  color: black;
+  >*{
+    display: table-cell;
+    vertical-align: top;
+    +*{
+      padding-left: 43px;
+    }
+  }
+  &__icon{
+    padding-top: 4px;
+  }
+  &__title{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+  &__list{
+    color: black;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    position: relative;
+    margin-bottom: 25px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &:after{
+      content: '•';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-right: 11px;
+    }
+    &_notAfter{
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
 
 
+.contacts{
+  color: black;
+  font-size: 17px;
+  font-weight: 300;
+  width: 399px;
+  max-width: 100%;
+  margin: 0 auto;
+  hr{
+    border-color: #c3c3c3;
+  }
+  &__text{
+  }
+  p:not(.title-default){
+    margin-bottom: 25px;
+  }
+  &__user{
+    display: table;
+    p:not(.title-default){
+      margin-bottom: 15px;
+    }
+    >*{
+      display: table-cell;
+      vertical-align: top;
+      +*{
+        padding-left: 39px;
+      }
+    }
+  }
+}

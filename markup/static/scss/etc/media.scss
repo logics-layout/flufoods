@@ -32,6 +32,16 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .inner-banner-list {
+    &__list {
+      margin-left: -40px;
+      margin-right: -40px;
+      &-item {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+  }
   .page__nav-list li a {
     font-size: 18px;
     padding: 17.5px 21px;
@@ -49,6 +59,12 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .maps-block{
+    height: 400px;
+  }
+  .header-main{
+    margin-bottom: 20px;
+  }
   .footer{
     &__content{
       padding: 22px 28px;
@@ -70,9 +86,33 @@ body, html{
     display: none;
   }
 
+  .inner-banner-list {
+    padding: 20px 25px;
+    &__title {
+      font-size: 36px;
+    }
+    &__list {
+      margin-left: -20px;
+      margin-right: -20px;
+      &-item {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 17px;
+        line-height: 21px;
+        &-img{
+          width: 100px;
+          display: inline-block;
+        }
+      }
+    }
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xs)) {
+  .inner-banner__title {
+    font-size: 65px;
+    line-height: 72px;
+  }
 
 }
 
@@ -86,6 +126,7 @@ body, html{
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
 
+
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xl)) {
@@ -93,6 +134,76 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .title-default {
+    font-size: 18px;
+  }
+  .form-control {
+    font-size: 15px;
+  }
+  .input-anim {
+    &__label {
+      font-size: 15px;
+    }
+  }
+  .bootstrap-select.btn-group {
+    .dropdown-toggle {
+      .filter-option {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .btn-md {
+    font-size: 19px;
+    font-weight: 900;
+    padding-top: 10.5px;
+    padding-bottom: 10.5px;
+  }
+
+  .list-advantages {
+    > * {
+      + * {
+        padding-left: 20px;
+      }
+    }
+    &__list {
+      font-size: 15px;
+      line-height: 22px;
+      &:after {
+        margin-right: 5px;
+      }
+    }
+    &__title{
+      font-size: 20px;
+    }
+  }
+
+  .page__wrapper {
+    padding-bottom: 20px;
+  }
+  .inner-banner-list {
+    margin: 0 -20px;
+    border-radius: 0;
+    padding: 35px 20px;
+    &__list {
+      margin: -15px;
+      &-item {
+        width: 50%;
+        padding: 15px;
+        font-size: 15px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  .inner-banner{
+    height: 380px;
+    &__title {
+      font-size: 50px;
+      line-height: 57px;
+    }
+  }
+
   .footer{
     border: none;
     padding: 32px 0;
@@ -100,9 +211,39 @@ body, html{
       margin: 0;
     }
   }
+  .text-big{
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .contacts{
+    font-size: 16px;
+    line-height: normal;
+    &__user{
+      >*{
+        +*{
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+
+  .inner-banner{
+    height: auto;
+    padding: 70px 0;
+    display: block;
+    &__content{
+      display: block;
+    }
+    &__title {
+      font-size: 30px;
+      line-height: 42px;
+    }
+  }
   .footer{
     &__content{
       hr{

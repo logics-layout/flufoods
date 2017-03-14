@@ -1,0 +1,112 @@
+extends main
+
+block head
+    - var headData = {title: "Главная"}
+    - var breadcrumb = true
+    - var index = {style: 2}
+
+    //link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+
+block content
+    br
+    br.hidden-sm-down
+    .container
+        .contacts
+            p.title-default Контакты
+
+            p 660047, Российская Федерация, г. Красноярск,
+                br.hidden-sm-down
+                |ул. Партизана Железняка, д. 14, оф. 88
+
+            p Звонки принимаются с 10:00 до 22:00&nbsp;
+                br.hidden-sm-down
+                b.text-big Телефон: (391) 250-70-20
+
+            p Отзывы и пожелания&nbsp;
+                br.hidden-sm-down
+                b.text-big E-mail: feedback@flyfoods.ru
+
+            hr
+            p.title-default.title-default_small Руководитель службы контроля качества
+            .contacts__user
+                div
+                    +img('content/contacs_user', 'png')
+                div
+                    p  Ги-Мануэль
+                        br
+                        | де Омем-Кристо
+                    p (391) 209-09-11
+                    p daftpunk@gmail.com
+
+            hr
+            p.title-default.title-default_small Задайте свой вопрос
+            form
+                .form-group
+                    .input-anim
+                        input.form-control(value="Жан Мишель Жар")
+                        labal.input-anim__label Ваше имя
+                .form-group
+                    .input-anim
+                        input.form-control()
+                        labal.input-anim__label E-mail
+
+                .form-group.form-group_error
+                    .input-anim
+                        input.form-control
+                        labal.input-anim__label Телефон
+                    labal.form-group__label Обязательное поле
+
+                .form-group.form-group_default
+                    select
+                        option Выбирете тему
+                        option item 1
+                        option item 2
+                        option item 3
+                        option item 4
+                        option item 5
+                .form-group.form-group_default
+                    textarea.form-control.form-control_border(placeholder="Сообщение", rows="3")
+
+                button.btn.btn-green.btn-width.btn-md Отправить
+
+
+
+block script
+    //script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+    //script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -121,7 +121,6 @@
 .sections-border{
   display: inline-block;
   font-size: 0;
-  position: relative;
   &-section{
     display: inline-block;
     vertical-align: middle;
@@ -507,6 +506,23 @@ b{
   }
 }
 
-
+.IScroll{
+  position: relative;
+  color: $green;
+  .iScrollLoneScrollbar{
+    width: 8px !important;
+    opacity: 1 !important;
+    //background-color: rgba(0, 49, 51, 0.4);
+    background-color: #eee;
+    border-radius: 4px;
+    .iScrollIndicator{
+      width: 8px !important;
+      background-color: currentColor !important;
+      border-radius: 25px !important;
+      border: 2px solid #eee !important;
+      cursor: row-resize;
+    }
+  }
+}
 
 

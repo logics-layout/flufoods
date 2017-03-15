@@ -1,10 +1,9 @@
 $(document).on('click', '[href="#"]', function(e) {
     return e.preventDefault();
 });
-var linkTop = $('.footer__scrollTop');
-linkTop.click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 500);
-});
+
+var headerDesktop = $('.header'),
+    headerDesktopClassNameActive = 'active';
 $(window).on({
     load: function () {
         checkFooterHeight();
@@ -12,10 +11,10 @@ $(window).on({
     },
     scroll: function () {
         var scrollTop = $(window).scrollTop();
-        if(scrollTop > 200){
-            linkTop.addClass('active');
+        if(scrollTop > 0){
+            headerDesktop.addClass(headerDesktopClassNameActive)
         }else{
-            linkTop.removeClass('active');
+            headerDesktop.removeClass(headerDesktopClassNameActive);
         }
         // checkHeaderFix();
     },
@@ -103,7 +102,7 @@ if ($.fn.slick) {
 //         ]
 //     });
 }
-//
+// стилизация селектов
 if($.fn.selectpicker){
     $('select').selectpicker({
         style: '',
@@ -111,6 +110,8 @@ if($.fn.selectpicker){
     }).selectpicker('setStyle', 'btn', 'remove');
 }
 
+
+// Меню toggle
 var bottomToggleMenu = $('#bottomToggleMenu'),
     pageWrapper = $('.page'),
     pageWrapperClassShow = 'page_show';
@@ -125,7 +126,7 @@ bottomToggleMenu.change(function () {
     }
 });
 
-
+// карта
 if (typeof google !== "undefined" && google !== null) {
     var MapView = $(".maps-block").get(0);
     var latlng = new google.maps.LatLng(52.4350352,103.987996,8.72);
@@ -151,7 +152,7 @@ if (typeof google !== "undefined" && google !== null) {
 }
 
 
-// формы
+// input style
 function checkFocusInput(e) {
     var classNameInputAnimActive = 'input-anim_active',
         typeEvent = e?e.type:false,
@@ -187,6 +188,24 @@ $('[data-toggle="popover"]').popover({
     container: 'body'
 });
 
-
-
+var IScrollFn = function () {
+    if (typeof IScroll !== "undefined" && IScroll !== null){
+        $('.IScroll').each(function () {
+            var visible = $(this).find('.iScrollIndicator:visible');
+            console.log(22);
+            new IScroll(this, {
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                preventDefault: false
+            });
+            if(visible[0]){
+                visible.parent().siblings('.iScrollLoneScrollbar').remove();
+            }
+        });
+    }
+};
+IScrollFn();
 

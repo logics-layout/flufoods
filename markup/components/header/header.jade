@@ -63,11 +63,6 @@ mixin header(data)
                 button.headerMobile__basketBlock-btn Оформить заказ
 
 
-
-
-
-
-
         //.headerMobile__menuBlock
             ul.headerMobile__menuBlock-list
                 li
@@ -156,53 +151,54 @@ mixin header(data)
                                                 span.header__basket-link-icon-num 5
                                             span.header__basket-link-title 1350.–
                                         .header__basket-list.text-left
-                                            p.header__basket-list-title Корзина
-                                            .header__basket-itemList
-                                                .header__basket-item
-                                                    a(href="#").header__basket-item-img: +img('content/header__basket-item/1')
-                                                    span.header__basket-item-desc
-                                                        a(href="#").db.header__basket-item-title Пицца Мясника
-                                                        span.header__basket-item-price 270.–
-                                                        |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        span.count
-                                                            button.count__btn.count__btn_minus -
-                                                            input(value='1').count__input
-                                                            button.count__btn.count__btn_plus +
-                                                .header__basket-item
-                                                    a(href="#").header__basket-item-img: +img('content/header__basket-item/1')
-                                                    span.header__basket-item-desc
-                                                        a(href="#").db.header__basket-item-title Пицца Мясника
-                                                        span.header__basket-item-price 270.–
-                                                        |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        span.count
-                                                            button.count__btn.count__btn_minus -
-                                                            input(value='1').count__input
-                                                            button.count__btn.count__btn_plus +
-                                                .header__basket-item
-                                                    a(href="#").header__basket-item-img: +img('content/header__basket-item/1')
-                                                    span.header__basket-item-desc
-                                                        a(href="#").db.header__basket-item-title Пицца Мясника
-                                                        span.header__basket-item-price 270.–
-                                                        |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        span.count
-                                                            button.count__btn.count__btn_minus -
-                                                            input(value='1').count__input
-                                                            button.count__btn.count__btn_plus +
-                                                .header__basket-item
-                                                    a(href="#").header__basket-item-img: +img('content/header__basket-item/2')
-                                                    span.header__basket-item-desc
-                                                        a(href="#").db.header__basket-item-title Пицца Мясника
-                                                        span.header__basket-item-price 270.–
-                                                        |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        span.count
-                                                            button.count__btn.count__btn_minus -
-                                                            input(value='1').count__input
-                                                            button.count__btn.count__btn_plus +
-                                            br
-                                            br
-                                            button.header__basket-btn Оформить заказ
+                                            .header__basket-list-content.text-left
+                                                p.header__basket-list-title Корзина
+                                                .header__basket-itemList.IScroll: div
+                                                    .header__basket-item
+                                                        a(href="#").header__basket-item-img: +img('content/header__basket-item/1')
+                                                        span.header__basket-item-desc
+                                                            a(href="#").db.header__basket-item-title Пицца Мясника
+                                                            span.header__basket-item-price 270.–
+                                                            |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            span.count
+                                                                button.count__btn.count__btn_minus -
+                                                                input(value='1').count__input
+                                                                button.count__btn.count__btn_plus +
+                                                    .header__basket-item
+                                                        a(href="#").header__basket-item-img: +img('content/header__basket-item/1')
+                                                        span.header__basket-item-desc
+                                                            a(href="#").db.header__basket-item-title Пицца Мясника
+                                                            span.header__basket-item-price 270.–
+                                                            |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            span.count
+                                                                button.count__btn.count__btn_minus -
+                                                                input(value='1').count__input
+                                                                button.count__btn.count__btn_plus +
+                                                    .header__basket-item
+                                                        a(href="#").header__basket-item-img: +img('content/header__basket-item/1')
+                                                        span.header__basket-item-desc
+                                                            a(href="#").db.header__basket-item-title Пицца Мясника
+                                                            span.header__basket-item-price 270.–
+                                                            |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            span.count
+                                                                button.count__btn.count__btn_minus -
+                                                                input(value='1').count__input
+                                                                button.count__btn.count__btn_plus +
+                                                    .header__basket-item
+                                                        a(href="#").header__basket-item-img: +img('content/header__basket-item/2')
+                                                        span.header__basket-item-desc
+                                                            a(href="#").db.header__basket-item-title Пицца Мясника
+                                                            span.header__basket-item-price 270.–
+                                                            |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            span.count
+                                                                button.count__btn.count__btn_minus -
+                                                                input(value='1').count__input
+                                                                button.count__btn.count__btn_plus +
+                                                br
+                                                br
+                                                button.header__basket-btn Оформить заказ
 
-                                .sections-border-section
+                                .sections-border-section(style="position: relative;")
                                     .header__listProfile.text-left
                                         a(href="#").header__listProfile-link: i.s-user
                                         //span.header__listProfile-notice Привет, Алексей! Давно не виделись!
@@ -214,8 +210,6 @@ mixin header(data)
                                             li: a(href="#") Бонусный баланс: 70 миль
                                             li: a(href="#"): b Активировать FlyCard
                                             li: a(href="#") Выйти
-
-
 
 
 

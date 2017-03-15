@@ -1,5 +1,27 @@
 .header{
-  padding: 18px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 9;
+  &.active{
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(210, 210, 210, 0.39);
+  }
+  >.container{
+    padding-top: 18px;
+    padding-bottom: 18px;
+    position: relative;
+    >.row{
+      >*{
+        position: static;
+      }
+    }
+  }
+  &-main{
+    height: 70px;
+  }
   &__right{
     text-align: right;
   }
@@ -18,7 +40,6 @@
     }
   }
   &__nav{
-    padding-top: 5px;
     ul{
       @include nl;
       font-size: 0;
@@ -121,32 +142,47 @@
         padding-left: 16px;
       }
     }
+    &-itemList{
+      max-height: 254px;
+      overflow: hidden;
+    }
     &-list{
       position: absolute;
-      top: 34px;
+      //top: 34px;
+      top: 0;
       right: 0;
-      border-radius: $border-radius;
-      background-color: white;
-      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
-      padding: 24px 24px;
       width: 341px;
+      //overflow: auto;
+      //height: 100vh;
       @include tr;
+      padding-top: 59px;
       margin-top: 20px;
       visibility: hidden;
       opacity: 0;
       z-index: 2;
+      pointer-events: none;
+      >*{
+        pointer-events: all;
+      }
+      &-content{
+        background-color: white;
+        border-radius: $border-radius;
+        box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+        padding: 24px 24px;
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          bottom: 100%;
+          right: 133px;
+          @include triangle('down-right', #fff, 13px, 12px);
+        }
+      }
       &-title{
         color: black;
         font-size: 17px;
         font-weight: 500;
         margin-bottom: 20px;
-      }
-      &:after{
-        content: '';
-        position: absolute;
-        bottom: 100%;
-        right: 133px;
-        @include triangle('down-right', #fff, 13px, 12px);
       }
     }
     &-itemList{
@@ -284,7 +320,11 @@
 }
 
 .headerMobile{
-  position: relative;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
   &__logo{
     width: 202px;
     display: block;

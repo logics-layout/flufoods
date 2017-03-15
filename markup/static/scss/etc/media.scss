@@ -59,6 +59,11 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .header {
+    &-main {
+      height: 56px;
+    }
+  }
   .maps-block{
     height: 400px;
   }

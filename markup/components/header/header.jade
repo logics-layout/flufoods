@@ -18,58 +18,99 @@ mixin header(data)
                 a(href="/").headerMobile__logo: +img('assets/header/logo', 'svg')
                 .headerMobile__sectionsShell
                     .headerMobile__sections
-                        .headerMobile__sections-section(data-block="#rrrrrr")
+                        a.headerMobile__sections-section(data-block="#menuBlock", href='#')
                             .headerMobile__nav
                                 .headerMobile__nav-title меню
-                        .headerMobile__sections-section(data-block='#eeeeee')
+                        a.headerMobile__sections-section(data-block='#eeeeee', href='#')
                             .header__basket-link
                                 span.header__basket-link-icon
                                     i.s-basket
                                     span.header__basket-link-icon-num 5
-                                span.header__basket-link-title 1350.–
+                                span.header__basket-link-title.hidden-xs-down
+                                    span.priceCountUp 1350
+                                    |.–
 
-                        .headerMobile__sections-section(data-block="#ccccc")
+                        a.headerMobile__sections-section(data-block="#ccccc", href='#')
                             .headerMobile__listProfile-link: i.s-user
-                        .headerMobile__sections-section(data-block="#ffff")
+                        a.headerMobile__sections-section(data-block="#ffff", href='#')
                             .headerMobile__phone: i.s-phone
 
 
-        .headerMobile__basketBlock.animEl#eeeeee
-            a(href="#").headerMobile__basketBlock-link
-                i.s-back
-                |&nbsp;&nbsp;
-                |Перейти к выбору блюд
-            br
-            p.headerMobile__basketBlock-title Корзина
-            ul.headerMobile__basketBlock-list
-                -for(var i = 0; i<3; i++)
+        .headerToggleBlock.animEl#eeeeee
+            .headerToggleBlock-content
+                br
+                a(href="#").headerMobile__basketBlock-link
+                    i.s-back
+                    |&nbsp;&nbsp;
+                    |Перейти к выбору блюд
+                br
+                p.headerMobile__basketBlock-title Корзина
+                ul.headerMobile__basketBlock-list
+                    -for(var i = 0; i<3; i++)
+                        li
+                            .headerMobile__basketBlock-item
+                                span.headerMobile__basketBlock-item-img: +img('content/header__basket-item/1')
+                                span.headerMobile__basketBlock-item-desc
+                                    span.db.headerMobile__basketBlock-item-title Пицца Мясника
+                                        button.headerMobile__basketBlock-item-clear: i.s-clear
+                                    span.db.headerMobile__basketBlock-item-price 270.–
+                                    span.db.headerMobile__basketBlock-item-titleSub Тонкое тесто
+                                    span.db.text-right
+                                        span.count.count_big
+                                            button.count__btn.count__btn_minus -
+                                            input(value='1').count__input
+                                            button.count__btn.count__btn_plus +
+                .headerMobile__basketBlock-bottom.text-center
+                    .headerMobile__basketBlock-resultPrice Итого:&nbsp;
+                        b 1350.–
+
+                    button.headerMobile__basketBlock-btn Оформить заказ
+
+
+        .headerToggleBlock.animEl#menuBlock
+            .headerToggleBlock-content
+                br
+                ul.headerMobile__menuBlock-list
                     li
-                        .headerMobile__basketBlock-item
-                            span.headerMobile__basketBlock-item-img: +img('content/header__basket-item/1')
-                            span.headerMobile__basketBlock-item-desc
-                                span.db.headerMobile__basketBlock-item-title Пицца Мясника
-                                    button.headerMobile__basketBlock-item-clear: i.s-clear
-                                span.db.headerMobile__basketBlock-item-price 270.–
-                                span.db.headerMobile__basketBlock-item-titleSub Тонкое тесто
-                                span.db.text-right
-                                    span.count.count_big
-                                        button.count__btn.count__btn_minus -
-                                        input(value='1').count__input
-                                        button.count__btn.count__btn_plus +
-            .headerMobile__basketBlock-bottom.text-center
-                .headerMobile__basketBlock-resultPrice Итого:&nbsp;
-                    b 1350.–
-
-                button.headerMobile__basketBlock-btn Оформить заказ
-
-
-        //.headerMobile__menuBlock
-            ul.headerMobile__menuBlock-list
-                li
-                    a(href="#").headerMobile__menuBlock-item
-                        span.headerMobile__menuBlock-item-icon: i.s-
-                        span.headerMobile__menuBlock-item-title Пицца
-
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('pizza')
+                            span.headerMobile__menuBlock-item-title Пицца
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('pasta')
+                            span.headerMobile__menuBlock-item-title Паста
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('plov')
+                            span.headerMobile__menuBlock-item-title Плов
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('wok')
+                            span.headerMobile__menuBlock-item-title Вок
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('sushi')
+                            span.headerMobile__menuBlock-item-title Суши
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('sup')
+                            span.headerMobile__menuBlock-item-title Супы
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('gril')
+                            span.headerMobile__menuBlock-item-title Гриль
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('salat')
+                            span.headerMobile__menuBlock-item-title Салаты
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('dessert')
+                            span.headerMobile__menuBlock-item-title Десерты
+                    li
+                        a(href="#").headerMobile__menuBlock-item
+                            span.headerMobile__menuBlock-item-icon: +icon('juice')
+                            span.headerMobile__menuBlock-item-title Напитки
 
 
         .headerMobile__navBlock
@@ -86,21 +127,23 @@ mixin header(data)
                 li: a(href="#"): +icon('vk')
 
 
-        .headerMobile__phoneBlock.animEl#ffff
-            a(href='#').headerMobile__phoneBlock-num
-                i.s-phone
-                |&nbsp;
-                | 250-70-20
-            button.headerMobile__phoneBlock-btn Позвонить
+        .headerToggleBlock.animEl#ffff
+            .headerToggleBlock-content.text-center
+                a(href='#').headerMobile__phoneBlock-num
+                    i.s-phone
+                    |&nbsp;
+                    | 250-70-20
+                button.headerMobile__phoneBlock-btn Позвонить
 
-        .headerMobile__profile.animEl#ccccc
-            ul.headerMobile__profile-list
-                li: a(href="#") Любимые блюда
-                li: a(href="#") Мои акции
-                li: a(href="#") Бонусы: 70 миль
-                li: a(href="#") Активировать Flycard
-                li: a(href="#") Личный кабинет
-                li: a(href="#") Выйти
+        .headerToggleBlock.animEl#ccccc
+            .headerToggleBlock-content
+                ul.headerMobile__profile-list
+                    li: a(href="#") Любимые блюда
+                    li: a(href="#") Мои акции
+                    li: a(href="#") Бонусы: 70 миль
+                    li: a(href="#") Активировать Flycard
+                    li: a(href="#") Личный кабинет
+                    li: a(href="#") Выйти
 
 
     .header.not-styleLink.hidden-md-down
@@ -149,7 +192,9 @@ mixin header(data)
                                             span.header__basket-link-icon
                                                 i.s-basket
                                                 span.header__basket-link-icon-num 5
-                                            span.header__basket-link-title 1350.–
+                                            span.header__basket-link-title
+                                                span.priceCountUp 0
+                                                |.–
                                         .header__basket-list.text-left
                                             .header__basket-list-content.text-left
                                                 p.header__basket-list-title Корзина

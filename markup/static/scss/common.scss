@@ -7,6 +7,9 @@ html, body {
   font-size: 16px;
   font-weight: 300;
   line-height: 27px;
+  >*{
+
+  }
 }
 
 .page {
@@ -15,6 +18,19 @@ html, body {
     transform: translateX(380px);
     transform: translate3d(380px,0,0);
     backface-visibility: hidden;
+  }
+  &__content{
+    height: 100vh;
+    overflow: auto;
+    padding-top: 70px;
+    &_hidden{
+      //overflow: hidden;
+      //height: 100vh;
+      //height: 0;
+      //display: none;
+      //pointer-events: none;
+      //visibility: hidden;
+    }
   }
 }
 

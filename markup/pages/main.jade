@@ -18,37 +18,38 @@ html(class="no-js", lang="ru")
     body.page
         |%=symbols=%
 
-        section.page__wrapper
-            .page__nav
-                ul.page__nav-list
-                    li: a(href="#") Меню
-                    li: a(href="#") Оплата и доставка
-                    li: a(href="#") Бонусная программа
-                    li: a(href="#") О Berrywood family
-                    li: a(href="#") Контакты
-
-            .header-main
-                // start header
-                +header(index)
-                // end header
-
-            //-if(!breadcrumb)
-            //    .container
-            //        br
-            //        br
-            //        ul.breadcrumb.not-styleLink
-            //            li: a(href="#"): span Главная
-            //            li: span О компании
-
-            //- Include your components here
-            //- start block content
-            block content
-            //- end block content
+        .header-main
+            // start header
+            +header(index)
+            // end header
+        .page__nav
+            ul.page__nav-list
+                li: a(href="#") Меню
+                li: a(href="#") Оплата и доставка
+                li: a(href="#") Бонусная программа
+                li: a(href="#") О Berrywood family
+                li: a(href="#") Контакты
+        .page__content
+            section.page__wrapper
 
 
-            .page__buffer
-        .page__footer
-            +footer()
+                //-if(!breadcrumb)
+                //    .container
+                //        br
+                //        br
+                //        ul.breadcrumb.not-styleLink
+                //            li: a(href="#"): span Главная
+                //            li: span О компании
+
+                //- Include your components here
+                //- start block content
+                block content
+                //- end block content
+
+
+                .page__buffer
+            .page__footer
+                +footer()
 
         +modal()
 
@@ -64,6 +65,7 @@ html(class="no-js", lang="ru")
         script(src="%=static=%js/separate-js/tooltip.js", type="text/javascript")
         script(src="%=static=%js/separate-js/iscroll.js" type="text/javascript")
         script(src="%=static=%js/separate-js/popover.js", type="text/javascript")
+        script(src="%=static=%js/separate-js/countUp.min.js", type="text/javascript")
         //- start block script
         block script
         //- end block script

@@ -4,28 +4,28 @@ $(document).on('click', '[href="#"]', function(e) {
 
 var headerDesktop = $('.header'),
     headerDesktopClassNameActive = 'active';
-$(window).on({
-    load: function () {
-        checkFooterHeight();
-        // checkHeaderFix();
-    },
+
+$('.page__content').on({
     scroll: function () {
-        var scrollTop = $(window).scrollTop();
+        var scrollTop = $(this).scrollTop();
         if(scrollTop > 0){
             headerDesktop.addClass(headerDesktopClassNameActive)
         }else{
             headerDesktop.removeClass(headerDesktopClassNameActive);
         }
-        // checkHeaderFix();
+    }
+});
+$(window).on({
+    load: function () {
+        checkFooterHeight();
     },
+
     resize: function () {
-        // checkHeaderFix();
         checkFooterHeight();
     }
 });
-// $('#callback').modal('show')
-if ($.fn.slick) {
 
+if ($.fn.slick) {
 //     $bottom__slider.slick({
 //         slidesToShow: 1,
 //         slidesToScroll: 1,
@@ -110,22 +110,6 @@ if($.fn.selectpicker){
     }).selectpicker('setStyle', 'btn', 'remove');
 }
 
-
-// Меню toggle
-var bottomToggleMenu = $('#bottomToggleMenu'),
-    pageWrapper = $('.page'),
-    pageWrapperClassShow = 'page_show';
-
-bottomToggleMenu.change(function () {
-    var checked = this.checked;
-
-    if(checked){
-        pageWrapper.addClass(pageWrapperClassShow)
-    }else{
-        pageWrapper.removeClass(pageWrapperClassShow)
-    }
-});
-
 // карта
 if (typeof google !== "undefined" && google !== null) {
     var MapView = $(".maps-block").get(0);
@@ -192,7 +176,6 @@ var IScrollFn = function () {
     if (typeof IScroll !== "undefined" && IScroll !== null){
         $('.IScroll').each(function () {
             var visible = $(this).find('.iScrollIndicator:visible');
-            console.log(22);
             new IScroll(this, {
                 scrollbars: true,
                 mouseWheel: true,
@@ -208,4 +191,18 @@ var IScrollFn = function () {
     }
 };
 IScrollFn();
+
+var priceCountUp = $('.priceCountUp');
+options = {
+    useEasing: true,
+    useGrouping: true,
+    separator: '',
+    decimal: '.',
+    prefix: '',
+    suffix: ''
+};
+priceCountUp.each(function () {
+    demo = new CountUp(this, 0, 1350, 0, 1, options);
+    demo.start();
+});
 

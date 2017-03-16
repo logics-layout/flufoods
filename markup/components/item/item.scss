@@ -1,74 +1,77 @@
 .item{
   display: block;
-  border: 1px solid #dadada !important;
-  background-color: #fff;
-  border-radius: 4px;
-  //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  color: #6e6f78;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 22px;
-  overflow: hidden;
-  &-col{
-    padding: 30px 26px;
-    min-height: 389px;
-    .item-img{
-      height: 190px;
-      line-height: 190px;
-      margin-bottom: 10px;
-    }
-    >span{
-      display: block;
+  text-decoration: none !important;
+  >*{
+    +*{
+      margin-top: 15px;
     }
   }
-  &-block{
-    //padding: 0 25px;
-    padding: 25px 15px;
-    display: table;
-    +.item{
-      margin-top: 9px;
-    }
-    .item-img{
-      width: 150px;
-      padding: 0 !important;
-    }
-    >span{
-      display: table-cell;
-      vertical-align: middle;
-      padding: 0 15px;
-      >span{
-        display: block;
-      }
+  &__img{
+    width: 100%;
+    background-color: #eee;
+    height: 286px;
+    border-radius: $border-radius;
+    background-size: cover;
+    background-position: center;
+  }
+  &__title{
+    color: black;
+    font-size: 23px;
+    font-weight: 500;
+    &-inner{
+      color: #04d959;
+      font-size: 17px;
+      font-weight: 900;
     }
   }
-  &:hover{
-    border: 2px solid #dadada;
-    box-shadow: 0 8px 9px rgba(0, 0, 0, 0.1);
-    .item-title{
-      span{
-        border-bottom-color: transparent;
-      }
+  &__price{
+    font-size: 23px;
+    font-weight: 500;
+    color: black;
+    &_descount{
+      color: #a6a6a6;
+      text-decoration: line-through;
     }
   }
-  &-img{
-    //text-align: center;
-    img{
+  &__text{
+    color: #b3b3b3;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 21px;
+  }
+  &__col{
+    display: block;
+    margin-left:-7.5px;
+    margin-right: -7.5px;
+    >*{
       display: inline-block;
-      max-height: 100%;
+      vertical-align: middle;
+      padding: 2px 7.5px;
     }
   }
-  &-title{
-    color: #0180bb;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 26px;
-    //text-decoration: underline;
-    margin-bottom: 14px;
-    span{
-      @include link-border-color(#0180bb);
-      display: inline;
+  &__listBtn{
+    font-size: 0;
+    margin: -4px;
+    display: block;
+    >*{
+      display: block;
+      vertical-align: middle;
+      padding: 4px;
     }
   }
-  &-text{
+}
+
+.item-list{
+  font-size: 0;
+  margin: -30px -20px;
+  &__section{
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 30px 20px;
+    width: 25%;
+    &_big{
+      width: 50%;
+    }
   }
 }

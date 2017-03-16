@@ -113,6 +113,9 @@ a.btn {
 .btn-green{
   @include button-variant(#fff, $green);
 }
+.btn-blue{
+  @include button-variant(#fff, #26daf5);
+}
 
 // Link buttons
 // -------------------------
@@ -172,6 +175,11 @@ a.btn {
 .btn-sm {
   font-weight: 300;
   padding: 6px 27px;
+}
+.btn-xs {
+  padding: 4px 17px;
+  font-size: 17px;
+  font-weight: 900;
 }
 //.btn-xl {
 //  font-size: 15px;

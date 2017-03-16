@@ -32,6 +32,18 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .item-list {
+    margin: -20px -10px;
+    &__section {
+      padding: 20px 10px;
+    }
+  }
+  .item {
+    &__img {
+      height: 250px;
+    }
+  }
+
   .inner-banner-list {
     &__list {
       margin-left: -40px;
@@ -59,6 +71,15 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .item-list {
+    &__section {
+      width: 33.33%;
+      &_big{
+        width: 100%;
+      }
+    }
+  }
+
   .page {
     &__content {
       height: auto;
@@ -70,7 +91,7 @@ body, html{
     height: 400px;
   }
   .header-main{
-    margin-bottom: 20px;
+    //margin-bottom: 20px;
   }
   .footer{
     &__content{
@@ -141,6 +162,37 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .category {
+    &-list {
+      padding: -15px -10px;
+      > * {
+        padding: 15px 10px;
+        width: 33.33%;
+      }
+    }
+  }
+
+  .item-list {
+    &__section {
+      width: 50%;
+    }
+  }
+  .item {
+    > * + * {
+      margin-top: 5px;
+    }
+    &__title {
+      font-size: 18px;
+    }
+    &__price {
+      font-size:18px;
+    }
+    &__text{
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
   .title-default {
     font-size: 18px;
   }
@@ -226,6 +278,15 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .item-list {
+    margin-left: 0;
+    margin-right: 0;
+    &__section {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
   .contacts{
     font-size: 16px;
     line-height: normal;

@@ -283,7 +283,16 @@
         opacity: 1;
       }
     }
-    &-link{}
+    &-link{
+      display: block;
+      svg{
+        display: block;
+        @include tr;
+      }
+      &:hover{
+        fill: #26daf5;
+      }
+    }
     &-list{
       width: 341px;
       @include nl;
@@ -345,6 +354,7 @@
     &-link{
       svg{
         display: block;
+        margin-right: -12px;
       }
     }
   }

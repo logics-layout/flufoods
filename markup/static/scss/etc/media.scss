@@ -182,6 +182,9 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .basket__label {
+    font-size: 19px;
+  }
   .style-checkbox__title_big {
     font-size: 15px;
   }
@@ -358,6 +361,12 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .title-default_marginMin {
+    margin-bottom: 10px;
+  }
+  .basket-resultPrice > * {
+    font-size: 29px;
+  }
   .basket-result__list-title_empty{
     display: none;
   }

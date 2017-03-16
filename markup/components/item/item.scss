@@ -74,4 +74,13 @@
       width: 50%;
     }
   }
+  &_plus{
+    .item-list__section{
+      position: relative;
+      &:after{
+        content: '';
+
+      }
+    }
+  }
 }

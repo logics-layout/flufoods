@@ -23,13 +23,7 @@ mixin itemCol(discount)
 
 
 
-mixin item(num)
-
-    //- if(_fn == 'col')
-    //    +itemCol(discount)
-    //- else if(_fn == 'block')
-        +itemBlock(discount)
-
+mixin item(num, fn)
     - var itemClass = ''
     - if(num == 0)
         - itemClass = 'item-list__section_big'
@@ -45,9 +39,14 @@ mixin item(num)
                             span.item__price_descount 370.–
                             |&nbsp;250.–
                     span
-                        span.hidden-md-down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        button.btn.btn-green.btn-xs Заказать
-                span.db.item__text Мясная, Маргарита и Вегетарианская.
+                        - if(fn != 'offText')
+                            span.hidden-md-down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            button.btn.btn-green.btn-xs Заказать
+                        - else
+
+
+                - if(fn != 'offText')
+                    span.db.item__text Мясная, Маргарита и Вегетарианская.
         -else
             -if(num%2==0)
                 a(href="#").item
@@ -58,7 +57,8 @@ mixin item(num)
                             span.db.item__price 250.–
                         span
                             button.btn.btn-blue.btn-xs Заказать
-                    span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
+                    - if(fn != 'offText')
+                        span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
             - else
                 a(href="#").item
                     span.db.item__img(style="background-image: url('https://im3-tub-ru.yandex.net/i?id=8a99d896a5fdeeaf9b3ebd3c99172bc1&n=33&h=215&w=382');")
@@ -69,13 +69,14 @@ mixin item(num)
                         span
                             button.btn.btn-green.btn-xs Заказать
 
-                    span.db
-                        span.item__title-inner Тесто:
-                        span.item__listBtn
-                            span
-                                button.btn.btn-green.btn-xs Тонкое
-                            span
-                                button.btn.btn-green.btn-xs Пышное
+                    - if(fn != 'offText')
+                        span.db
+                            span.item__title-inner Тесто:
+                            span.item__listBtn
+                                span
+                                    button.btn.btn-green.btn-xs Тонкое
+                                span
+                                    button.btn.btn-green.btn-xs Пышное
 
-                    span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
+                        span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
 

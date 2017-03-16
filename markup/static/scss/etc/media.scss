@@ -170,6 +170,9 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
+  .modal__item-descLeft{
+    padding-left: 20px;
+  }
 
 
 }
@@ -179,6 +182,24 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .modal{
+    &__item{
+      &-text{
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+  .mess-live-desc{
+    padding: 0;
+  }
+
+  .container{
+    .container_small{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 
 
   .basket-result__title {

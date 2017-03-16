@@ -1,44 +1,64 @@
 mixin modal()
-    #callback(class="modal fade")
-        .modal-dialog.modal-md
+    #itemDetali(class="modal fade")
+        .modal-dialog.modal-lg
             .modal-content
-                .modal-header.modal-padding
-                    p.modal-header__title Узнать цену
-                    //button(type="button", class="close", data-dismiss="modal", aria-hidden="true"): +icon('clear')
-                .modal-body.modal-padding
-                    .row: .col-xs-11
-                        #callback-form
-                            .modal__table
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Ваша заявка
-                                    div.modal__table-col
-                                        input.form-control(placeholder="Экскаватор TVEX 180W")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Ваш город
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Приобретение в лизинг
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Ф.И.О
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Эл. почта
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Телефон
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
+                //.modal-header
+                //    p.modal-header__title Узнать цену
+                .modal-body
+                    button(type="button", class="close", data-dismiss="modal", aria-hidden="true"): +icon('clear')
+                    .row
+                        .col-md-5.col-xs-12
+                            a.modal__item-img(href="#", style="background-image: url('https://im3-tub-ru.yandex.net/i?id=8a99d896a5fdeeaf9b3ebd3c99172bc1&n=33&h=215&w=382');")
+                                span.modal__item-img-icon: +icon('increase')
+
                             br
-                            .text-center: button.btn.btn-orange.btn-ttu Отправить заявку
+                            .mess-live-desc
+                                .mess-live-desc__cell
+                                    .mess-live-desc__icon: +icon('love', 'svg-love', 22, 19)
+                                .mess-live-desc__cell
+                                    b Это ваше любимое блюдо.
+                                    br
+                                    |Закажите его и получите
+                                    br
+                                    |за него в два раза больше
+                                    br
+                                    |бонусных баллов.
+                            br
+
+                        .col-md-7.col-xs-12
+                            .modal__item-descLeft
+                                .modal__item-titles
+                                    p.modal__item-title Пицца Мясная
+                                    p.modal__item-titleSub выбрать тесто
+
+                                span.modal__item-price 370
+                                    b .–
+                                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                span.count.count_big
+                                    button.count__btn.count__btn_minus -
+                                    input(value='1').count__input
+                                    button.count__btn.count__btn_plus +
+
+                                br.hidden-sm-down
+                                br
+                                br
+                                p.modal__item-text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
+                                br.hidden-sm-down
+                                p.modal__item-text
+                                    | 32 см / 380 г
+                                    br
+                                    | Тесто, баклажаны, цукини, моцерелла, чесночное масло, соль, перец
+                                    br
+                                    | белки: 14,3
+                                    br
+                                    | жиры: 0,33
+                                    br
+                                    | углеводы: 8,21
+                                    br
+                                    br
+                                    | энергитическая ценность: 372 Ккал
+
+                .modal-footer
+                    button.btn.btn-green.btn-xs-mim(style="width: 215px;max-width: 100%;min-height: 53px;") Заказать
+
 

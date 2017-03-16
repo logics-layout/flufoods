@@ -65,8 +65,9 @@
     line-height: normal;
     margin-bottom: -6px;
     display: block;
-    i{
-      margin-top: -4px;
+    fill: $green;
+    svg{
+      margin-top: 4px;
     }
     &:hover, &:focus{
       text-decoration: none;
@@ -112,12 +113,16 @@
       }
       &-icon{
         display: inline-block;
+        vertical-align: middle;
         position: relative;
         color: #fff;
         text-align: center;
+        svg{
+          display: block;
+        }
         &-num{
           position: absolute;
-          top: -5px;
+          top: -8px;
           right: -8px;
           width: 20px;
           height: 20px;
@@ -325,6 +330,13 @@
   top: 0;
   left: 0;
   right: 0;
+  &__phone{
+    svg{
+      display: block;
+      fill: $green;
+      margin: 0 auto;
+    }
+  }
   &__logo{
     width: 202px;
     display: block;
@@ -662,6 +674,7 @@
         position: absolute;
         right: 0;
         top: 0;
+        fill: #fff;
         &:hover{
           opacity: 1;
         }

@@ -40,26 +40,6 @@
   overflow-y: auto;
 }
 
-.modal__table{
-  display: table;
-  width: 100%;
-  >*{
-    display: table-row;
-    +*{
-      >*{
-        padding-top: 20px;
-      }
-    }
-    >*{
-      display: table-cell;
-      vertical-align: middle;
-      +*{
-        padding-left: 15px;
-      }
-    }
-  }
-}
-
 // Shell div to position the modal with bottom padding
 .modal-dialog {
   position: relative;
@@ -70,11 +50,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 22px;
-    height: 100%;
+    padding: 17px;
     z-index: 9;
     fill: #b4b4b4;
-    padding-right: 42px;
     &:hover{
       fill: #000;
     }
@@ -98,6 +76,7 @@
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
+  border-radius: 30px;
 }
 
 // Modal background
@@ -167,13 +146,15 @@
 .modal-body {
   position: relative;
   padding: 40px 20px;
+  padding-bottom: 0 !important;
 }
 
 // Footer (for actions)
 .modal-footer {
-  padding: $modal-inner-padding;
+  padding: 19px;
+  padding-top: 0;
   text-align: right; // right align buttons
-  border-top: 1px solid $modal-footer-border-color;
+  //border-top: 1px solid $modal-footer-border-color;
   //@include clearfix; // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
@@ -221,7 +202,7 @@
   }
 
   .modal-body {
-    padding: 39px 60px;
+    padding: 48px;
   }
 
   .well-title{

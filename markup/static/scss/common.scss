@@ -404,5 +404,82 @@ body {
   }
 }
 
+.modal{
+  &__item{
+    &-img{
+      display: block;
+      width: 100%;
+      height: 329px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 30px;
+      position: relative;
+      &-icon{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        fill: #fff;
+        padding: 18px;
+        svg{
+          display: block;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    &-titles{
+      margin-bottom: 12px;
+    }
+    &-title{
+      color: black;
+      font-size: 23px;
+      font-weight: 500;
+      margin: 0;
+    }
+    &-titleSub{
+      color: $green;
+      font-size: 13px;
+      font-weight: 300;
+      margin: 0;
+      line-height: 13px;
+    }
+    &-price{
+      color: black;
+      font-size: 23px;
+      font-weight: 500;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &-text{
+      color: #b3b3b3;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 23px;
+    }
+  }
+}
 
-
+.mess-live-desc{
+  display: table;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #b3b3b3;
+  padding: 0 12px;
+  b{
+    font-size: 15px;
+    font-weight: 500;
+  }
+  &__cell{
+    display: table-cell;
+    vertical-align: top;
+    +*{
+      padding-left: 18px;
+    }
+  }
+  &__icon{
+    fill: #fff;
+    stroke-width: 9px;
+    stroke: $green;
+  }
+}

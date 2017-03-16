@@ -24,7 +24,7 @@ mixin header(data)
                         a.headerMobile__sections-section(data-block='#eeeeee', href='#')
                             .header__basket-link
                                 span.header__basket-link-icon
-                                    i.s-basket
+                                    +icon('basket', 'svg-basket', 25, 21)
                                     span.header__basket-link-icon-num 5
                                 span.header__basket-link-title.hidden-xs-down
                                     span.priceCountUp 1350
@@ -33,7 +33,7 @@ mixin header(data)
                         a.headerMobile__sections-section(data-block="#ccccc", href='#')
                             .headerMobile__listProfile-link: i.s-user
                         a.headerMobile__sections-section(data-block="#ffff", href='#')
-                            .headerMobile__phone: i.s-phone
+                            .headerMobile__phone: +icon('phone', 'svg-phone', 10, 20)
 
 
         .headerToggleBlock.animEl#eeeeee
@@ -52,7 +52,7 @@ mixin header(data)
                                 span.headerMobile__basketBlock-item-img: +img('content/header__basket-item/1')
                                 span.headerMobile__basketBlock-item-desc
                                     span.db.headerMobile__basketBlock-item-title Пицца Мясника
-                                        button.headerMobile__basketBlock-item-clear: i.s-clear
+                                        button.headerMobile__basketBlock-item-clear: +icon('clear')
                                     span.db.headerMobile__basketBlock-item-price 270.–
                                     span.db.headerMobile__basketBlock-item-titleSub Тонкое тесто
                                     span.db.text-right
@@ -171,14 +171,14 @@ mixin header(data)
                         .sections-border
                             .sections-border-section
                                 a(href="#").header__phone
-                                    i.s-phone
-                                    |&nbsp;250-70-20
+                                    +icon('phone', 'svg-phone', 10, 20)
+                                    |250-70-20
 
                             -if(style == 2)
                                 .sections-border-section
                                     a(href="#").header__basket
                                         span.header__basket-icon
-                                            i.s-basket
+                                            +icon('basket', 'svg-basket', 25, 21)
                                 .sections-border-section
                                     .list-link
                                         .list-link__section
@@ -190,7 +190,7 @@ mixin header(data)
                                     .header__basket
                                         a(href="#").header__basket-link
                                             span.header__basket-link-icon
-                                                i.s-basket
+                                                +icon('basket', 'svg-basket', 25, 21)
                                                 span.header__basket-link-icon-num 5
                                             span.header__basket-link-title
                                                 span.priceCountUp 0

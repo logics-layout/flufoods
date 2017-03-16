@@ -10,14 +10,94 @@ block head
 block content
     br
     .container
-        .item-list.item-list_plus
-            - for(var i = 0; i<11; i++)
-                +item(i, 'offText')
+        .step
+            .step__after
+            .step__table
+                .step__table-cell
+                    a(href='#').step__item Корзина
+                .step__table-cell.active
+                    a(href='#').step__item Оформление заказа
+                .step__table-cell
+                    a(href='#').step__item Оплата
+        br
+        br
+        .container_small
+            a(href="#").prev-link
+                span
+                    span.db.prev-link__icon: +icon('arrows-prev')
+                span
+                    span.db.prev-link__title Перейти к выбору
+
+            h1.text-center Ваш заказ:
+
+            div(style="overflow: hidden;")
+                .item-list.item-list_plus
+                    - for(var i = 0; i<4; i++)
+                        +item(i, 'offText')
 
 
+                    +item(i, 'offText', true)
+
+        br
+        br
+        .basket-result
+            .row
+                .col-lg-8
+                    .basket-result-sections
+                        .basket-result-section
+                            .basket-result__list
+                                .basket-result__list-title Сколько вас?
+                                .basket-result__list-desc
+                                    .basket-result__list-desc-icon
+                                        +icon('people')
+                                    .basket-result__list-desc-count
+                                        .count.count_big
+                                            button.count__btn.count__btn_minus -
+                                            input(value='1').count__input
+                                            button.count__btn.count__btn_plus +
+                        .basket-result-section
+                            .basket-result__list
+                                .basket-result__list-title Приборы
+                                .basket-result__list-desc
+                                    .basket-result__list-desc-icon
+                                        +icon('plug')
+                                    .basket-result__list-desc-count
+                                        .count.count_big
+                                            button.count__btn.count__btn_minus -
+                                            input(value='1').count__input
+                                            button.count__btn.count__btn_plus +
+                        .basket-result-section
+                            .basket-result__list
+                                .basket-result__list-title.basket-result__list-title_empty &nbsp;
+                                .basket-result__list-desc
+                                    .basket-result__list-desc-icon
+                                        +icon('spoon')
+                                    .basket-result__list-desc-count
+                                        .count.count_big
+                                            button.count__btn.count__btn_minus -
+                                            input(value='1').count__input
+                                            button.count__btn.count__btn_plus +
+                        .basket-result-section
+                            .basket-result__list
+                                .basket-result__list-title.basket-result__list-title_empty &nbsp;
+                                .basket-result__list-desc
+                                    .basket-result__list-desc-icon
+                                        +icon('sticks')
+                                    .basket-result__list-desc-count
+                                        .count.count_big
+                                            button.count__btn.count__btn_minus -
+                                            input(value='1').count__input
+                                            button.count__btn.count__btn_plus +
+                .col-lg-4
+                    .hidden-lg-up
+                        br
+                    .basket-result__priceAll
+                        p.basket-result__title Сумма заказа:
+                            |&nbsp;
+                            b 1250.–
+                        button.btn.btn-green.btn-xs-mim Оформление заказа
 
 
-    .container
 
 block script
     //script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")

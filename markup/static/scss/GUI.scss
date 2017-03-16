@@ -118,6 +118,14 @@
   }
 }
 
+h1{
+  color: black;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 34px;
+}
+
 .sections-border{
   display: inline-block;
   font-size: 0;
@@ -525,4 +533,37 @@ b{
   }
 }
 
-
+.prev-link{
+  display: inline-block;
+  font-size: 0;
+  margin: -5px -10px;
+  >*{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  &:hover{
+    .prev-link__title{
+      text-decoration: underline;
+    }
+  }
+  &__icon{
+    width: 32px;
+    height: 32px;
+    background-color: $green;
+    fill: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 43px;
+    svg{
+      width: 11px;
+      height: 19px;
+    }
+  }
+  &__title{
+    color: black;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: normal;
+  }
+}

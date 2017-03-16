@@ -16,7 +16,7 @@
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   //border: 3px solid transparent;
   border: none;
-  white-space: nowrap;
+  //white-space: nowrap;
   @include button-size(12px, 43px, $font-size-base, $line-height-base, $btn-border-radius-base);
   @include user-select(none);
   //outline: none;
@@ -179,6 +179,11 @@ a.btn {
 .btn-xs {
   padding: 4px 17px;
   font-size: 17px;
+  font-weight: 900;
+}
+.btn-xs-mim {
+  padding: 8px 17px;
+  font-size: 23px;
   font-weight: 900;
 }
 //.btn-xl {

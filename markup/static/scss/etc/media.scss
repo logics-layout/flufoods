@@ -32,6 +32,10 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .item-list_plus .item__img:after {
+    font-size: 26px;
+    margin-right: 3px;
+  }
   .item-list {
     margin: -20px -10px;
     &__section {
@@ -68,9 +72,22 @@ body, html{
     width: 280px;
     left: -280px;
   }
+  .basket-result {
+    padding: 25px 25px;
+  }
+  .basket-result__list-title {
+    margin-bottom: 13px;
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .basket-result__priceAll{
+    float: none;
+    margin: 0 auto;
+    display: table;
+    text-align: center;
+  }
+
   .item-list {
     &__section {
       width: 33.33%;
@@ -162,6 +179,20 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+
+
+  .basket-result__title {
+    font-size: 19px;
+    line-height: 27px;
+  }
+
+  .btn-xs-mim {
+    font-size: 18px;
+  }
+  h1{
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
   .category {
     &-list {
       padding: -15px -10px;
@@ -275,16 +306,99 @@ body, html{
     line-height: 24px;
     margin-bottom: 30px;
   }
+  .step{
+    width: auto;
+    display: block;
+    margin: 0 -20px;
+    &__after{
+      //border-radius: 0 20px 20px 0;
+      border-radius: 0;
+      &:after{
+        //content: '';
+        display: block;
+        @include triangle('right', $green, 8px, 59px);
+        position: absolute;
+        top: -10px;
+        left: 100%;
+      }
+    }
+    &__table{
+      border-radius: 0;
+    }
+    &__item {
+      font-size: 14px;
+      padding: 10px 15px;
+      font-weight: normal;
+    }
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .basket-result__list-title_empty{
+    display: none;
+  }
+
+  .basket-result-section{
+    display: block !important;
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .prev-link{
+    margin: -5px -5px;
+    >*{
+      padding: 5px 5px;
+    }
+    &__icon{
+      width: 25px;
+      height: 25px;
+      line-height: 31px;
+      svg{
+        width: 7px;
+        height: 14px;
+      }
+    }
+    &__title{
+      font-size: 15px;
+    }
+  }
+  h1{
+    font-size: 25px;
+  }
+  .item-list{
+    &_plus{
+      .item{
+        &__img{
+          &:after {
+            display: none;
+          }
+        }
+        &:after{
+          content: '+';
+          color: #04d958;
+          font-weight: 900;
+          line-height: 56px;
+          position: absolute;
+
+          font-size: 45px;
+          margin-right: 0;
+          right: inherit;
+          top: 100%;
+          left: 0;
+          margin-top: -25px;
+        }
+      }
+    }
+    &__section{
+      position: relative;
+    }
+  }
   .item-list {
-    margin-left: 0;
-    margin-right: 0;
+    margin: -30px 0;
     &__section {
       width: 100%;
-      padding-left: 0;
-      padding-right: 0;
+      padding: 30px 0;
     }
   }
   .contacts{

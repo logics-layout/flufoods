@@ -23,60 +23,103 @@ mixin itemCol(discount)
 
 
 
-mixin item(num, fn)
+mixin item(num, fn, banner)
     - var itemClass = ''
+    - var itemColWidth = ''
     - if(num == 0)
         - itemClass = 'item-list__section_big'
 
+    - if(fn == 'offText')
+        - itemColWidth = 'item__col_table'
+
+
     .item-list__section(class!=itemClass)
-        -if(num == 0)
+        - if(banner)
             a(href="#").item
-                span.db.item__img(style="background-image: url('https://im3-tub-ru.yandex.net/i?id=8a99d896a5fdeeaf9b3ebd3c99172bc1&n=33&h=215&w=382');")
-                span.db.item__title Набор «Green Villa Pizza»
-                span.item__col
-                    span
-                        span.db.item__price
-                            span.item__price_descount 370.–
-                            |&nbsp;250.–
-                    span
+                span.db.item__img
+                    button.item__clear: +icon('clear')
+                    span.db.item__img-content
+                        span.db.item__img-text Закажите
+                            br
+                            |еще на
+                        span.db.item__img-title 70 рублей
+
+                        span.db.item__img-text для
+                            br
+                            |бесплатной
+                            br
+                            |доставки
+        - else
+            -if(num == 0)
+                a(href="#").item
+                    span.db.item__img(style="background-image: url('https://im3-tub-ru.yandex.net/i?id=8a99d896a5fdeeaf9b3ebd3c99172bc1&n=33&h=215&w=382');")
+                        button.item__clear: +icon('clear')
+                    span.db.item__title Набор «Green Villa Pizza»
+                    span.item__col(class!=itemColWidth)
+                        span
+                            span.db.item__price
+                                span.item__price_descount 370.–
+                                |&nbsp;250.–
+                        span
+                            - if(fn != 'offText')
+                                span.hidden-md-down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                button.btn.btn-green.btn-xs Заказать
+                            - else
+                                .text-right
+                                    span.count.count_big
+                                        button.count__btn.count__btn_minus -
+                                        input(value='1').count__input
+                                        button.count__btn.count__btn_plus +
+
+
+                    - if(fn != 'offText')
+                        span.db.item__text Мясная, Маргарита и Вегетарианская.
+            -else
+                -if(num%2==0)
+                    a(href="#").item
+                        span.db.item__img(style="background-image: url('https://im3-tub-ru.yandex.net/i?id=8a99d896a5fdeeaf9b3ebd3c99172bc1&n=33&h=215&w=382');")
+                            button.item__clear: +icon('clear')
+                        span.db.item__title Пицца Мясная
+                        span.item__col(class!=itemColWidth)
+                            span
+                                span.db.item__price 250.–
+                            span
+                                - if(fn != 'offText')
+                                    button.btn.btn-blue.btn-xs Заказать
+                                - else
+                                    .text-right
+                                        span.count.count_big
+                                            button.count__btn.count__btn_minus -
+                                            input(value='1').count__input
+                                            button.count__btn.count__btn_plus +
                         - if(fn != 'offText')
-                            span.hidden-md-down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            button.btn.btn-green.btn-xs Заказать
-                        - else
+                            span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
+                - else
+                    a(href="#").item
+                        span.db.item__img(style="background-image: url('https://im3-tub-ru.yandex.net/i?id=8a99d896a5fdeeaf9b3ebd3c99172bc1&n=33&h=215&w=382');")
+                            button.item__clear: +icon('clear')
+                        span.db.item__title Пицца Мясная
+                        span.item__col(class!=itemColWidth)
+                            span
+                                span.db.item__price 250.–
+                            span
+                                - if(fn != 'offText')
+                                    button.btn.btn-green.btn-xs Заказать
+                                - else
+                                    .text-right
+                                        span.count.count_big
+                                            button.count__btn.count__btn_minus -
+                                            input(value='1').count__input
+                                            button.count__btn.count__btn_plus +
 
+                        - if(fn != 'offText')
+                            span.db
+                                span.item__title-inner Тесто:
+                                span.item__listBtn
+                                    span
+                                        button.btn.btn-green.btn-xs Тонкое
+                                    span
+                                        button.btn.btn-green.btn-xs Пышное
 
-                - if(fn != 'offText')
-                    span.db.item__text Мясная, Маргарита и Вегетарианская.
-        -else
-            -if(num%2==0)
-                a(href="#").item
-                    span.db.item__img(style="background-image: url('https://im3-tub-ru.yandex.net/i?id=8a99d896a5fdeeaf9b3ebd3c99172bc1&n=33&h=215&w=382');")
-                    span.db.item__title Пицца Мясная
-                    span.item__col
-                        span
-                            span.db.item__price 250.–
-                        span
-                            button.btn.btn-blue.btn-xs Заказать
-                    - if(fn != 'offText')
-                        span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
-            - else
-                a(href="#").item
-                    span.db.item__img(style="background-image: url('https://im3-tub-ru.yandex.net/i?id=8a99d896a5fdeeaf9b3ebd3c99172bc1&n=33&h=215&w=382');")
-                    span.db.item__title Пицца Мясная
-                    span.item__col
-                        span
-                            span.db.item__price 250.–
-                        span
-                            button.btn.btn-green.btn-xs Заказать
-
-                    - if(fn != 'offText')
-                        span.db
-                            span.item__title-inner Тесто:
-                            span.item__listBtn
-                                span
-                                    button.btn.btn-green.btn-xs Тонкое
-                                span
-                                    button.btn.btn-green.btn-xs Пышное
-
-                        span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
+                            span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
 

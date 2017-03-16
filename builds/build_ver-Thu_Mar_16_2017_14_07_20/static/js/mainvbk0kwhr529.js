@@ -1,3 +1,154 @@
+window._heightBlock = function(block) {
+    var PaddingBottom, PaddingTop;
+    block = $(block);
+    PaddingTop = block.css('padding-top');
+    PaddingBottom = block.css('padding-bottom');
+
+    if(PaddingTop) PaddingTop = +PaddingTop.replace('px', '');
+    if(PaddingBottom) PaddingBottom = +PaddingBottom.replace('px', '');
+    return block.height() + PaddingTop + PaddingBottom;
+};
+
+var objFnToggle = {
+    toggleMobile: function(){
+        if($(window).width() > 991) return true;
+        var _this = $(this),
+            target = _this.data('target');
+
+        if(target && (target = $(target))[0]){
+            target.hide();
+        }
+        _this.off('click');
+        _this.on('click', this, function () {
+            $(this).toggleClass('active');
+            target.slideToggle(300);
+        });
+    }
+};
+
+$('[data-toggle]').click(toggleFn = function(){
+    var _this = $(this),
+        toggle = _this.data('toggle');
+    if (typeof (base = objFnToggle[toggle]) === "function") {
+        objFnToggle[toggle].call(this);
+    }
+}).each(toggleFn);
+var footerHeight = null,
+    footer = $('.page__footer'),
+    page__wrapper = $('.page__wrapper'),
+    page__buffer = $('.page__buffer');
+
+var checkFooterHeight = function(){
+    footerHeight = _heightBlock(footer);
+    page__wrapper.css("margin-bottom", "-"+footerHeight+"px");
+    page__buffer.css("height", ""+footerHeight+"px");
+};
+checkFooterHeight();
+var _fnMenuHeaderTop = function(toggle, list, slide) {
+    var className, el, time;
+    time = 300;
+    el = toggle.closest('.mobile-list-anim');
+    className = 'active';
+
+    if (toggle.prop("checked")) {
+        if(slide) list.stop().slideDown(time);
+        el.add(list).addClass(className);
+    } else {
+        if(slide) list.stop().slideUp(time);
+        el.add(list).removeClass(className);
+    }
+};
+
+var menuHeaderTopToggle = $('#bottomToggleMenuMobile');
+var menuHeaderTopList = $('.headerMobile__navBlock, .toggleNav');
+
+menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, false);});
+_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, false);
+
+
+// Меню toggle (Desktop)
+var bottomToggleMenu = $('#bottomToggleMenu'),
+    pageWrapper = $('.page'),
+    pageWrapperClassShow = 'page_show';
+
+bottomToggleMenu.change(function () {
+    var checked = this.checked;
+    if(checked){
+        pageWrapper.addClass(pageWrapperClassShow)
+    }else{
+        pageWrapper.removeClass(pageWrapperClassShow)
+    }
+});
+
+
+// пуневерсальный переключатель для шапки
+var headerMobileSectionsSection = $('.headerMobile__sections-section'),
+    headerMobileClassName = 'active';
+var toggleBtnMobile = function (target){
+    if(target.closest('.headerToggleBlock')[0]) return false;
+
+    var time = 300,
+        check = true,
+        section = headerMobileSectionsSection.not(target);
+
+    if(target.is(headerMobileSectionsSection) && !target.hasClass(headerMobileClassName)){
+        var block = target.data('block');
+        if(block){
+            block = $(block);
+            if(block[0]){
+                target.addClass(headerMobileClassName);
+                block.stop().slideDown(time);
+            }
+        }
+        check = false;
+    }
+
+
+    if(check !==false && target.hasClass('headerMobile__sections-section') && target.hasClass(headerMobileClassName)){
+        section = headerMobileSectionsSection;
+    }
+
+    if(section.hasClass(headerMobileClassName)){
+        section.removeClass(headerMobileClassName).each(function(){
+            var _this = $(this);
+            block = _this.data('block');
+            if(block) {
+                block = $(block);
+                if (block[0]){
+                    block.slideUp(300);
+                }
+            }
+        });
+    }
+
+    if(headerMobileSectionsSection.hasClass(headerMobileClassName)){
+        $('.page__content').addClass('page__content_hidden');
+    }else{
+        $('.page__content').removeClass('page__content_hidden');
+    }
+
+};
+
+
+$(document).click(function(e) {
+    var target;
+    target = $(e.target);
+    // console.log(22);
+    if ((!target.is(menuHeaderTopList) && !target.closest(menuHeaderTopList)[0]) && (!target.is(menuHeaderTopToggle) && !target.is('.menuTopMobel'))) {
+        menuHeaderTopToggle[0].checked = false;
+        _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, false);
+    }
+
+    if(target.closest('.page__content')[0] && pageWrapper.hasClass(pageWrapperClassShow)){
+        bottomToggleMenu[0].checked = false;
+        pageWrapper.removeClass(pageWrapperClassShow);
+        bottomToggleMenu.change();
+    }
+
+    toggleBtnMobile(target);
+});
+
+
 $(document).on('click', '[href="#"]', function(e) {
     return e.preventDefault();
 });

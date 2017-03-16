@@ -135,12 +135,9 @@ output {
   //box-shadow: inset 0.1px 1px 3px rgba(0, 0, 0, 0.3);
 
   // Customize the `:focus` state to imitate native WebKit styles.
-  @include form-control-focus(#15dc64);
+  @include form-control-focus(#d3d3d3);
 
   &:focus{
-    &~.input-anim__label{
-      color: #15dc64;
-    }
   }
 
   // Placeholder
@@ -240,17 +237,24 @@ input[type="search"] {
 
 .form-group {
   margin-bottom: $form-group-margin-bottom;
+  position: relative;
   &_default{
     margin-bottom: 5px;
+  }
+  &_success{
+    .input-anim__label{
+      color: #15dc64;
+    }
+    .form-control {
+      border-bottom-color: #15dc64;
+    }
   }
   &_error{
     .form-control{
       border-bottom-color: #f84b4b;
-      &:focus{
-        &~.input-anim__label{
-          color: #f84b4b;
-        }
-      }
+    }
+    .input-anim__label{
+      color: #f84b4b;
     }
     .form-group__label{
       color: #f84b4b;
@@ -268,6 +272,53 @@ input[type="search"] {
   }
   .input-anim{
     margin-top: 25px;
+  }
+  &_tipActive{
+    .form-group__tip{
+      opacity: 1;
+      visibility: visible;
+      &-after{
+        color: $green;
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+  &__tip{
+    background-color: white;
+    border: 1px solid $green;
+    border-radius: 0 0 25px 25px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    margin-top: -1px;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    @include tr;
+    &-after{
+      color: #d6d6d6;
+      position: absolute;
+      @include triangle('down', currentColor, 8px, 6px);
+      top: 50%;
+      right: 7px;
+      transform: translateY(-50%);
+      @include tr;
+    }
+    &-list{
+      @include nl;
+      li{
+        display: block;
+        a{
+          display: block;
+          padding: 5px 25px;
+          color: #acacac;
+          font-size: 17px;
+          font-weight: 300;
+        }
+      }
+    }
   }
 }
 

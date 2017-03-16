@@ -1,0 +1,178 @@
+extends main
+
+include ../components/item/item
+
+block head
+    - var headData = {title: "Корзина"}
+
+    link(href="%=static=%css/separate-css/jquery.datetimepicker.css", rel="stylesheet", type="text/css")
+
+block content
+    br
+    .container
+        .step
+            .step__after
+            .step__table
+                .step__table-cell
+                    a(href='#').step__item Корзина
+                .step__table-cell.active
+                    a(href='#').step__item Оформление заказа
+                .step__table-cell
+                    a(href='#').step__item Оплата
+        br
+        br
+        .contacts
+            p.title-default Заказ №5784 на сумму 1250₽
+            form
+                .form-group
+                    .input-anim
+                        input.form-control(value="Жан Мишель Жар")
+                        labal.input-anim__label Ваше имя
+                .form-group.form-group_success
+                    .input-anim
+                        input.form-control(value="janjan@gmail.com")
+                        labal.input-anim__label E-mail
+                .form-group.form-group_error
+                    .input-anim
+                        input.form-control(value="222")
+                        labal.input-anim__label Телефон
+                    labal.form-group__label Обязательное поле
+
+                .form-group
+                    .input-anim
+                        input.form-control(placeholder="Улица").tip_input
+                    .form-group__tip-after
+                    .form-group__tip
+                        ul.form-group__tip-list
+                            li: a(href="#") Мира
+                            li: a(href="#") Московская
+                            li: a(href="#") Мичурина
+                            li: a(href="#") Маерчака
+                            li: a(href="#") 9 Мая
+
+                .row
+                    .col-lg-3
+                        .form-group
+                            .input-anim
+                                input.form-control
+                                labal.input-anim__label Дом
+                    .col-lg-3
+                        .form-group
+                            .input-anim
+                                input.form-control
+                                labal.input-anim__label Подъезд
+                    .col-lg-3
+                        .form-group
+                            .input-anim
+                                input.form-control
+                                labal.input-anim__label Квартира
+                    .col-lg-3
+                        .form-group
+                            .input-anim
+                                input.form-control
+                                labal.input-anim__label Этаж
+                br
+                .form-group
+                    textarea.form-control.form-control_border(placeholder="Комментарий к адресу", rows="3")
+                br
+
+                p.title-default.title-default_marginMin.title-default_marginMin_small.title-default_small Время доставки
+                span.inline-block.toggle-style.toggle-style_paddingMin
+                    input(type="radio", name='a', id='eeee').toggle-style__input.toggle-style__input_left
+                    input(type="radio", name='a', checked, id='ddddd', data-toggle-block='#vots').toggle-style__input.toggle-style__input_right
+                    span
+                        label(for="eeee").toggle-style__left Ближайшее
+                    span
+                        span.toggle-style__el
+                    span
+                        label(for="ddddd").toggle-style__right Выбрать
+
+                |&nbsp;
+                #vots.inline-block(style="display: none;")
+                    .dateView
+                        input.dateView__input(value="28.03.2017", data-setting='{"format":"d.m.Y", "timepicker":false}')
+                        .dateView__section
+                            .dateView__item.dateView__item_date
+                                span.dateView_view-date 31 сентября
+                                .dateView__item-icon: +icon('date', 'svg-date', 15, 13)
+                    .dateView
+                        input.dateView__input(value="21:00", data-setting='{"format":"H:i", "datepicker":false, "timepicker":true}')
+                        .dateView__section
+                            .dateView__item.dateView_view-H 21
+                            .dateView__separator :
+                            .dateView__item.dateView_view-i 18
+
+                br
+                br
+                p.title-default.title-default_marginMin.title-default_marginMin_small.title-default_small Подтверждение заказа
+                span.toggle-style
+                    input(type="radio", name='d', checked, id='eeee1', data-toggle-block='#votss1').toggle-style__input.toggle-style__input_left
+                    input(type="radio", name='d', id='ddddd1', data-toggle-block='#votss').toggle-style__input.toggle-style__input_right
+                    span
+                        label(for="eeee1").toggle-style__left SMS
+                    span
+                        span.toggle-style__el
+                    span
+                        label(for="ddddd1").toggle-style__right Звонок оператора
+
+                br
+                br
+                #votss1(style="display: none;")
+                    button.btn.btn-green.btn-sm Запросить звонок
+
+
+                #votss(style="display: none;")
+                    .promo-code
+                        .promo-code__input
+                            .input-anim
+                                input.form-control
+                                labal.input-anim__label Код
+                        .promo-code__btn
+                            button.btn.btn-green.btn-sm Запросить код
+
+                br
+                br
+                button.btn.btn-green.btn-width.btn-md Перейти к оплате
+
+
+
+
+block script
+    script(src="%=static=%js/separate-js/jquery.datetimepicker.full.js" type="text/javascript")
+    //script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

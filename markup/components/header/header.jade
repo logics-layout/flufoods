@@ -31,7 +31,7 @@ mixin header(data)
                                     |.–
 
                         a.headerMobile__sections-section(data-block="#ccccc", href='#')
-                            .headerMobile__listProfile-link: i.s-user
+                            .headerMobile__listProfile-link: +icon('user', 'svg-user', 21, 22)
                         a.headerMobile__sections-section(data-block="#ffff", href='#')
                             .headerMobile__phone: +icon('phone', 'svg-phone', 10, 20)
 
@@ -176,9 +176,10 @@ mixin header(data)
 
                             -if(style == 2)
                                 .sections-border-section
-                                    a(href="#").header__basket
-                                        span.header__basket-icon
-                                            +icon('basket', 'svg-basket', 25, 21)
+                                    .header__basket
+                                        a(href="#").header__basket-link
+                                            span.header__basket-link-icon
+                                                +icon('basket', 'svg-basket', 25, 21)
                                 .sections-border-section
                                     .list-link
                                         .list-link__section

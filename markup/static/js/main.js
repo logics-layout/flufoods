@@ -5,6 +5,25 @@ $(document).on('click', '[href="#"]', function(e) {
 var headerDesktop = $('.header'),
     headerDesktopClassNameActive = 'active';
 
+
+function popoverFn() {
+    placement = 'right';
+
+    if($(window).width() <= 991){
+        placement = 'top'
+    }
+
+    if($.fn.popover){
+        $('[data-toggle="popover"]').popover('destroy').popover({
+            trigger: 'hover',
+            // trigger: 'click',
+            placement: placement,
+            container: 'body'
+        });
+    }
+}
+
+popoverFn();
 $('.page__content').on({
     scroll: function () {
         var scrollTop = $(this).scrollTop();
@@ -13,7 +32,7 @@ $('.page__content').on({
         }else{
             headerDesktop.removeClass(headerDesktopClassNameActive);
         }
-    }
+    },
 });
 
 // шаги в корзине
@@ -57,6 +76,7 @@ $(window).on({
     resize: function () {
         checkFooterHeight();
         stepFn();
+        popoverFn();
     }
 });
 
@@ -201,11 +221,7 @@ function checkFocusInput(e) {
 checkFocusInput();
 $('.form-control').on('focus blur', checkFocusInput);
 
-$('[data-toggle="popover"]').popover({
-    trigger: 'hover',
-    // trigger: 'click',
-    container: 'body'
-});
+
 
 var IScrollFn = function () {
     if (typeof IScroll !== "undefined" && IScroll !== null){
@@ -239,4 +255,72 @@ options = {
 priceCountUp.each(function () {
     demo = new CountUp(this, 0, 1350, 0, 1, options);
     demo.start();
+});
+
+var toggleStyle  = $('.toggle-style');
+var checkToggleStyle = function () {
+    toggleStyle.each(function () {
+        var _this = $(this);
+        var checked = _this.find('input').filter(':checked'),
+            dataToggle = false,
+            check = false;
+
+        dataToggle = checked.siblings('input').data('toggle-block');
+        if(dataToggle){
+            dataToggle = $(dataToggle);
+            dataToggle.stop().fadeOut(300);
+            check = true;
+        }
+
+        dataToggle = checked.data('toggle-block');
+        if(dataToggle){
+            dataToggle = $(dataToggle);
+            dataToggle.stop().delay(check?300:0).fadeIn(300);
+        }
+
+
+    });
+};
+checkToggleStyle();
+toggleStyle.find('input').change(checkToggleStyle);
+
+
+if($.fn.datetimepicker){
+    $('.dateView__input').each(function () {
+        var _this = $(this),
+            setting = _this.data('setting'),
+            opts = {
+                lang: 'ru',
+                format: 'd.m.Y H:i:s',
+                scrollMonth: false,
+                onChangeDateTime: function(dp, $input){
+                    var DateFormatterO = new DateFormatter();
+                    var parseDate = DateFormatterO.formatDate(dp, 'd F');
+                    var parseTimeH = DateFormatterO.formatDate(dp, 'H');
+                    var parseTimeI = DateFormatterO.formatDate(dp, 'i');
+                    var parseTimeS = DateFormatterO.formatDate(dp, 's');
+
+                    var dateView = $input.closest('.dateView'),
+                        date = dateView.find('.dateView_view-date'),
+                        H = dateView.find('.dateView_view-H'),
+                        i = dateView.find('.dateView_view-i');
+                        s = dateView.find('.dateView_view-s');
+
+                    date.text(parseDate);
+                    H.text(parseTimeH);
+                    i.text(parseTimeI);
+                    s.text(parseTimeS);
+                }
+            };
+        _this.datetimepicker($.extend(true, setting, opts)).trigger('blur.xdsoft');
+    })
+}
+
+$('.tip_input').on('focus input blur', function () {
+    var el = $(this).closest('.form-group');
+    if($(this).val().length>3){
+        el.addClass('form-group_tipActive')
+    }else{
+        el.removeClass('form-group_tipActive');
+    }
 });

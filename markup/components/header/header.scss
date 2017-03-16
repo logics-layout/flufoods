@@ -54,6 +54,11 @@
           display: block;
           color: #181818;
           padding: 4px 15px;
+          @include tr;
+          text-decoration: none !important;
+          &:hover{
+            color: #26daf5;
+          }
         }
       }
     }
@@ -66,6 +71,7 @@
     margin-bottom: -6px;
     display: block;
     fill: $green;
+    @include tr;
     svg{
       margin-top: 4px;
     }
@@ -97,6 +103,7 @@
   }
   &__basket{
     &:hover{
+
       .header__basket-list{
         opacity: 1;
         visibility: visible;
@@ -105,12 +112,6 @@
     }
     &-link{
       display: block;
-      &:hover, &:focus{
-        text-decoration: none;
-        .header__basket-icon-num{
-          transform: scale(1.2);
-        }
-      }
       &-icon{
         display: inline-block;
         vertical-align: middle;
@@ -119,6 +120,7 @@
         text-align: center;
         svg{
           display: block;
+          @include tr;
         }
         &-num{
           position: absolute;
@@ -145,6 +147,15 @@
         font-weight: 900;
         line-height: normal;
         padding-left: 16px;
+      }
+      &:hover, &:focus{
+        text-decoration: none;
+        .header__basket-link-icon{
+          fill: #26daf5;
+          &-num{
+            transform: scale(1.2);
+          }
+        }
       }
     }
     &-itemList{
@@ -330,6 +341,13 @@
   top: 0;
   left: 0;
   right: 0;
+  &__listProfile{
+    &-link{
+      svg{
+        display: block;
+      }
+    }
+  }
   &__phone{
     svg{
       display: block;

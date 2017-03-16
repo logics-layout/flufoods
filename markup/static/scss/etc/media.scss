@@ -182,6 +182,9 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .style-checkbox__title_big {
+    font-size: 15px;
+  }
   .modal{
     &__item{
       &-text{

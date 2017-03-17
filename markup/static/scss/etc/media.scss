@@ -358,6 +358,15 @@ body, html{
       font-weight: normal;
     }
   }
+  .radio-style{
+    &__title{
+      font-size: 15px;
+    }
+    &__el{
+      width: 16px;
+      height: 16px;
+    }
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {

@@ -5,9 +5,10 @@
   right: 0;
   background-color: #fff;
   z-index: 9;
+  border-bottom: 1px solid transparent;
   &.active{
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(210, 210, 210, 0.39);
+    border-bottom-color: rgba(210, 210, 210, 0.39);
   }
   >.container{
     padding-top: 18px;

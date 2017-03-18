@@ -8,11 +8,11 @@ block head
     //link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
-
-    .block-green
+    .catalog-category-fix-buffer
+    .catalog-category-fix.block-green.hidden-md-down
         ul.category-list
             li
-                a(href="#").category-item
+                a(href="#").category-item.active
                     span.category-item-icon: span.category-item-icon-content: +icon('pizza', 'svg-pizza', 46, 45)
                     span.category-item-title Пицца
             li
@@ -51,18 +51,12 @@ block content
                 a(href="#").category-item
                     span.category-item-icon: span.category-item-icon-content: +icon('juice', 'svg-juice', 34, 45)
                     span.category-item-title Напитки
-
     br
     br
     .container
         .item-list
             - for(var i = 0; i<11; i++)
                 +item(i)
-
-
-
-
-    .container
 
 block script
     //script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")

@@ -69,9 +69,7 @@
   &:active,
   &.active {
     outline: 0;
-    //background-image: none;
-    box-shadow: 0 0 0 #000;
-    transform: translateY(3px);
+    transform: translateY(1px);
   }
 
   &.disabled,

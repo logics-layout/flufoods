@@ -268,7 +268,7 @@ body {
     display: block;
     font-size: 17px;
     font-weight: 300;
-    &:hover, &:focus{
+    &.active, &:hover, &:focus{
       text-decoration: none;
       //fill: $green;
       //font-weight: bold;
@@ -784,4 +784,39 @@ body {
 
     }
   }
+}
+
+.catalog-category-fix{
+  //position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 8;
+  &.active{
+    padding: 14px 0;
+    position: fixed;
+    margin-top: 68px;
+    .category-list{
+      li{
+        padding: 0;
+        +li{
+          border-left: 1px solid #57e690;
+        }
+        a{
+          padding: 3px 27px;
+          &:hover{
+            background-color: #57e690;
+          }
+        }
+      }
+    }
+    .category-item{
+      &-icon{
+        display: none;
+      }
+    }
+  }
+}
+.page__content{
+  //padding-top: 255px;
 }

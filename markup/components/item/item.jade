@@ -62,7 +62,7 @@ mixin item(num, fn, banner)
                         span
                             - if(fn != 'offText')
                                 span.hidden-md-down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                button.btn.btn-green.btn-xs Заказать
+                                button.btn.btn-green.btn-xs.add-basket Заказать
                             - else
                                 .text-right
                                     span.count.count_big
@@ -83,7 +83,7 @@ mixin item(num, fn, banner)
                                 span.db.item__price 250₽
                             span
                                 - if(fn != 'offText')
-                                    button.btn.btn-blue.btn-xs Заказать
+                                    button.btn.btn-blue.btn-xs.add-basket Заказать
                                 - else
                                     .text-right
                                         span.count.count_big
@@ -101,7 +101,7 @@ mixin item(num, fn, banner)
                                 span.db.item__price 250₽
                             span
                                 - if(fn != 'offText')
-                                    button.btn.btn-green.btn-xs Заказать
+                                    button.btn.btn-green.btn-xs.add-basket Заказать
                                 - else
                                     .text-right
                                         span.count.count_big

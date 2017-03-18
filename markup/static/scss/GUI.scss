@@ -918,3 +918,17 @@ b{
   }
 }
 
+.label{
+  border: 1px solid #04d958;
+  border-radius: $border-radius;
+  color: #21dd6b;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1px 12px;
+  padding-top: 3px;
+  display: inline-block;
+  &_success{
+    color: $green;
+  }
+}

@@ -171,6 +171,9 @@ body, html{
     &__bonuses {
       width: 372px;
     }
+    &__meals {
+      width: 400px;
+    }
   }
   .stock {
     &_personal {
@@ -193,6 +196,9 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .live-meals-block{
+    margin: 0 -20px;
+  }
   .balance{
     >*{
       +*{
@@ -501,6 +507,14 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .live-meals {
+    &__item {
+      font-size: 13px;
+    }
+  }
+  .label {
+    font-size: 13px;
+  }
   .balance{
     >*{
       +*{

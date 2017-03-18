@@ -666,8 +666,33 @@ body {
 }
 
 .stock{
-  &_personal{
-    width: 391px;
+  &__item{
+    &-title{
+      color: black;
+      font-size: 23px;
+      font-weight: 500;
+      line-height: normal;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+    &-img{
+      margin-bottom: 25px;
+      img{
+        border-radius: $border-radius;
+        width: 100%;
+      }
+    }
+    &-text{
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 21px;
+      p{
+        margin-bottom: 22px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }
 

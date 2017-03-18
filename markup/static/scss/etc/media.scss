@@ -169,6 +169,12 @@ body, html{
   .personal {
     min-width: 480px;
   }
+  .stock {
+    &_personal {
+      width: 391px;
+      max-width: 100%;
+    }
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
@@ -184,10 +190,29 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .stock {
+    &__item {
+      &-title {
+        font-size: 18px;
+      }
+      &-text {
+        font-size: 15px;
+        line-height: 18px;
+        p{
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
 
   .personal {
     width: 100%;
     display: block;
+    &__hr{
+      margin: 25px 0;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
     >*{
       display: block;
       +*{

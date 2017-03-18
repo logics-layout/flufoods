@@ -151,6 +151,18 @@ body, html{
       }
     }
   }
+  .headerMobile{
+    .header__listProfile-notice{
+      top: 91%;
+      border-radius: 0;
+      left: 0;
+      width: 100%;
+      white-space: normal;
+      &:after{
+        //display: none;
+      }
+    }
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xs)) {
@@ -196,6 +208,7 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+
   .live-meals-block{
     margin: 0 -20px;
   }

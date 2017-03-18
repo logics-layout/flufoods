@@ -1,8 +1,11 @@
 mixin header(data)
     - var style = 1
+    - var profile = false
 
     -if(typeof(data) == 'object' && data.style)
         - style = data.style
+    -if(typeof(data) == 'object' && data.profile)
+        - profile = data.profile
 
     .headerMobile.not-styleLink.hidden-lg-up
         .headerMobile__sectionMain
@@ -31,9 +34,16 @@ mixin header(data)
                                     |₽
 
                         a.headerMobile__sections-section(data-block="#ccccc", href='#')
-                            .headerMobile__listProfile-link: +icon('user', 'svg-user', 21, 22)
+                            - if(profile)
+                                .header__listProfile-link
+                                    .header__listProfile-link-ava: +img('content/personal', 'png')
+                            - else
+                                .headerMobile__listProfile-link: +icon('user', 'svg-user', 21, 22)
                         a.headerMobile__sections-section(data-block="#ffff", href='#')
                             .headerMobile__phone: +icon('phone', 'svg-phone', 10, 20)
+
+            //- if(profile)
+                span.header__listProfile-notice.text-center Привет, Алексей! Давно не виделись!
 
 
         .headerToggleBlock.animEl#eeeeee
@@ -246,8 +256,12 @@ mixin header(data)
 
                                 .sections-border-section(style="position: relative;")
                                     .header__listProfile.text-left
-                                        a(href="#").header__listProfile-link: +icon('user', 'svg-user', 21, 22)
-                                        //span.header__listProfile-notice Привет, Алексей! Давно не виделись!
+                                        - if(profile)
+                                            a(href="#").header__listProfile-link
+                                                .header__listProfile-link-ava: +img('content/personal', 'png')
+                                            span.header__listProfile-notice Привет, Алексей! Давно не виделись!
+                                        - else
+                                            a(href="#").header__listProfile-link: +icon('user', 'svg-user', 21, 22)
                                         ul.header__listProfile-list
                                             li.selection: span: b Жан Мишель Жар
                                             li: a(href="#") Личный кабинет

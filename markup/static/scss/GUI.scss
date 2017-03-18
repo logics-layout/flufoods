@@ -146,6 +146,9 @@ h1{
 .color-grey{
   color: #b3b3b3;
 }
+.color-red{
+  color: red;
+}
 small{
   font-size: 13px;
   font-weight: 300;
@@ -914,3 +917,4 @@ b{
     @include tr;
   }
 }
+

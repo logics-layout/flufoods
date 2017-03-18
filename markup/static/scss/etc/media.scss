@@ -168,6 +168,9 @@ body, html{
 @include my-media-query(min, map_get($grid-breakpoints, md)) {
   .personal {
     min-width: 480px;
+    &__bonuses {
+      width: 372px;
+    }
   }
   .stock {
     &_personal {
@@ -190,6 +193,29 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .balance{
+    >*{
+      +*{
+        padding-left: 25px;
+      }
+    }
+    &__title{
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+    &__price{
+      font-size: 35px;
+    }
+  }
+  .personal{
+    &__bonuses{
+      .personal__contacts-item{
+        >*{
+          font-size: 14px;
+        }
+      }
+    }
+  }
   .stock {
     &__item {
       &-title {
@@ -475,6 +501,20 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .balance{
+    >*{
+      +*{
+        padding-left: 15px;
+      }
+    }
+    &__title{
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+    &__price{
+      font-size: 28px;
+    }
+  }
   .title-default_marginMin {
     margin-bottom: 10px;
   }

@@ -634,6 +634,16 @@ body {
       }
     }
   }
+  &__bonuses{
+    max-width: 100%;
+    color: black;
+    font-weight: 300;
+    .personal__contacts-item{
+      >*{
+        font-size: 17px;
+      }
+    }
+  }
 }
 
 .dank-card{
@@ -696,3 +706,32 @@ body {
   }
 }
 
+.balance{
+  background-color: white;
+  border: 1px solid #04d959;
+  border-radius: 30px;
+  padding: 25px;
+  display: table;
+  width: 100%;
+  >*{
+    display: table-cell;
+    vertical-align: top;
+    +*{
+      padding-left: 38px;
+    }
+  }
+  &__title{
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+    display: block;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+  &__price{
+    color: #04d959;
+    font-size: 41px;
+    font-weight: 700;
+    display: block;
+  }
+}

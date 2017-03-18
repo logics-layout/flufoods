@@ -1,0 +1,50 @@
+extends personal-main
+
+block personal_content
+    span.toggle-style
+        input(type="radio", name='d', id='eeee1', data-toggle-block='#vots').toggle-style__input.toggle-style__input_left
+        input(type="radio", name='d', checked, id='ddddd1', data-toggle-block='#votss').toggle-style__input.toggle-style__input_right
+        span
+            label(for="eeee1").toggle-style__left: b Есть карта
+        span
+            span.toggle-style__el
+        span
+            label(for="ddddd1").toggle-style__right: b Нет карты
+    br
+    br
+
+    #votss(style="display: none;")
+        .dank-card.dank-card_not
+        br
+        label.style-checkbox
+            input.style-checkbox__input(type="checkbox", checked)
+            span.style-checkbox__el
+            span.style-checkbox__title.style-checkbox__title_big
+                a(href="#").style-checkbox__link.color-green Обычная FlyCard
+                |&nbsp;– 100₽
+                br
+        br
+        label.style-checkbox
+            input.style-checkbox__input(type="checkbox")
+            span.style-checkbox__el
+            span.style-checkbox__title.style-checkbox__title_big Vip FlyCard – 1000₽
+                br
+                small.color-grey 15% бонусных рублей с каждого
+                    br
+                    |заказа.
+
+        br
+        br
+        br
+        button.btn.btn-green.btn-width.btn-md Заказать
+
+    #vots(style="display: none;")
+        .dank-card
+            .dank-card__content.text-center
+                .dank-card__logo: +img('content/logo', 'svg')
+            .dank-card__number
+                .input-anim
+                    input.form-control.form-control_white(value="4272 0023 5678 2314")
+                    labal.input-anim__label.input-anim__label_white Номер карты
+        br
+        button.btn.btn-green.btn-width.btn-md Активировать

@@ -519,3 +519,155 @@ body {
   padding: 13px 15px;
 }
 
+
+.personal{
+  //width: 490px;
+  display: table;
+  margin: 0 auto;
+  >*{
+    display: table-cell;
+    vertical-align: top;
+    +*{
+      padding-left: 24px;
+    }
+  }
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+  &__left{
+    border-right: 1px solid #e5e5e5;
+    //float: left;
+  }
+  &__right{
+    //padding-left: 204px;
+  }
+  &__list{
+    @include nl;
+    display: block;
+    li{
+      display: block;
+      margin-right: -1px;
+      +li{
+        border-top: 1px solid #e5e5e5;
+      }
+      &.active{
+        background-color: #fff;
+        a{
+          font-weight: bold;
+        }
+      }
+      a{
+        display: block;
+        color: black;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: normal;
+        padding: 17px 3px;
+        padding-right: 20px;
+      }
+    }
+  }
+  &__ava{
+    display: table;
+    >*{
+      display: table-cell;
+      vertical-align: middle;
+      +*{
+        padding-left: 40px;
+      }
+    }
+    &-img{
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+    }
+    &-name{
+      color: black;
+      font-size: 17px;
+      font-weight: 700;
+    }
+  }
+
+  &__contacts{
+    display: table;
+    width: 100%;
+    &-item{
+      display: table-row;
+      >*{
+        display: table-cell;
+        vertical-align: middle;
+        padding: 13px 0;
+        +*{
+          padding-left: 30px;
+        }
+      }
+      &_after{
+        >*{
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 30px;
+        }
+        +*{
+          >*{
+            padding-top: 30px;
+          }
+        }
+      }
+      &-title{
+        color: #acacac;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 11px;
+        display: block;
+      }
+      &-value{
+        height: 15px;
+        color: #181818;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: normal;
+        overflow: hidden;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+.dank-card{
+  background-color: #04d959;
+  border-radius: 30px;
+  display: table;
+  width: 100%;
+  position: relative;
+  height: 180px;
+  &_not{
+    background-color: #e5e5e5;
+    border: 1px solid #b3b3b3;
+  }
+  &__content{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__logo{
+    display: block;
+    img{
+      width: 190px;
+    }
+  }
+  &__number{
+    position: absolute;
+    right: 23px;
+    bottom: 13px;
+    width: 157px;
+  }
+}
+
+.stock{
+  &_personal{
+    width: 391px;
+  }
+}
+

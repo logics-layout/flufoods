@@ -166,7 +166,9 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, md)) {
-
+  .personal {
+    min-width: 480px;
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
@@ -182,6 +184,84 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+
+  .personal {
+    width: 100%;
+    display: block;
+    >*{
+      display: block;
+      +*{
+        padding-left: 0;
+        padding-top: 40px;
+      }
+    }
+    &__list{
+      width: auto;
+      display: block;
+      border: none;
+      margin: 0 -20px;
+      background: #eeeeee;
+      li {
+        margin-right: 0;
+        &.active{
+          background-color: $green;
+          a{
+            color: #fff;
+          }
+        }
+        a{
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+    }
+    &__contacts {
+      margin: 3px -20px;
+      display: block;
+      width: auto;
+      &-item {
+        display: block;
+        font-size: 0;
+        padding: 10px 0;
+        &:nth-of-type(2n){
+          background-color: #eee;
+        }
+        > * {
+          display: inline-block;
+          vertical-align: middle;
+          padding: 3px 10px;
+
+          + * {
+            padding-left: 10px;
+          }
+          &:empty{
+            padding: 0 !important;
+          }
+        }
+        &_after{
+          border-bottom: 1px solid #ddd;
+          >*{
+            border-bottom: none;
+            padding: 3px 10px;
+          }
+          +*{
+            >*{
+            }
+          }
+        }
+        &-titleBlock{
+          width: 28%;
+        }
+        &-valueBlock{
+          width: 72%;
+        }
+        &-btnBlock{
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .basket__label {
     font-size: 19px;
   }

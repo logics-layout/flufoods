@@ -260,14 +260,17 @@ body {
       display: inline-block;
       vertical-align: middle;
       font-size: 14px;
-      padding: 15px 27px;
     }
   }
   &-item{
+    padding: 15px 27px;
     color: currentColor;
     display: block;
     font-size: 17px;
     font-weight: 300;
+    &.active{
+      font-weight: bold;
+    }
     &.active, &:hover, &:focus{
       text-decoration: none;
       //fill: $green;
@@ -796,6 +799,10 @@ body {
     padding: 14px 0;
     position: fixed;
     margin-top: 68px;
+    opacity: 1;
+    @include tr;
+
+
     .category-list{
       li{
         padding: 0;
@@ -803,7 +810,8 @@ body {
           border-left: 1px solid #57e690;
         }
         a{
-          padding: 3px 27px;
+          padding-top: 3px;
+          padding-bottom: 3px;
           &:hover{
             background-color: #57e690;
           }

@@ -32,6 +32,14 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .category {
+    &-list {
+      padding: -15px -20px;
+    }
+    &-item{
+      padding: 15px 20px;
+    }
+  }
   .item-list_plus .item__img:after {
     font-size: 26px;
     margin-right: 3px;

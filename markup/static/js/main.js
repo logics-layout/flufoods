@@ -38,7 +38,7 @@ function checkFixCategory() {
 
     // if(scrollTop != catalogCategoryFixHeight) return false;
     scrollTopCheck = scrollTop;
-    if(scrollTop>=window.catalogCategoryFixHeight){
+    if(scrollTop>10 && scrollTop>=window.catalogCategoryFixHeight){
         catalogCategoryFix.addClass(className);
         catalogCategoryFixBuffer.height(catalogCategoryFixHeight);
     }else if(catalogCategoryFix.hasClass(className)){
@@ -102,6 +102,9 @@ $(window).on({
         checkFooterHeight();
         stepFn();
         popoverFn();
+        if(!catalogCategoryFix.hasClass('active') && catalogCategoryFix.is(':visible')){
+            window.catalogCategoryFixHeight = _heightBlock(catalogCategoryFix);
+        }
     }
 });
 
@@ -320,7 +323,7 @@ if($.fn.datetimepicker){
                 scrollMonth: false,
                 onChangeDateTime: function(dp, $input){
                     var DateFormatterO = new DateFormatter();
-                    var parseDate = DateFormatterO.formatDate(dp, 'd F');
+                    var parseDate = DateFormatterO.formatDate(dp, 'd F Y');
                     var parseTimeH = DateFormatterO.formatDate(dp, 'H');
                     var parseTimeI = DateFormatterO.formatDate(dp, 'i');
                     var parseTimeS = DateFormatterO.formatDate(dp, 's');
@@ -351,5 +354,32 @@ $('.tip_input').on('focus input blur', function () {
 });
 
 $('.add-basket').click(function () {
+    var _this = $(this),
+        ctx = $($(window).width()>=991?".header":".headerMobile"),
+        elBasket = ctx.find('.header__basket-link'),
+        elBasketOffset = elBasket.offset(),
+        parent = _this.closest('.item'),
+        img = parent.find('.item__img'),
+        imgOffset = img.offset(),
+        imgClone = img.clone().addClass('animate').css({
+            top: imgOffset.top+"px",
+            left: imgOffset.left+"px",
+            width: img.width()
+        });
+
+
+    $('body').append(imgClone).find('.item__img.animate').animate({
+        top: elBasketOffset.top+(elBasket.height()/2),
+        left: elBasketOffset.left+(elBasket.width()/2),
+        height: "hide",
+        width: "hide",
+    }, {
+        duration: 500,
+        complete: function () {
+            $(this).remove();
+        }
+    });
+
    return false;
 });
+

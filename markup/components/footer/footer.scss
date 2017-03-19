@@ -27,6 +27,11 @@
           font-size: 23px;
           font-weight: 500;
           padding: 0 10.5px;
+          &:hover{
+            color: #26daf5;
+            transition: .2s;
+            text-decoration: none;
+          }
         }
       }
     }

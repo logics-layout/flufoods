@@ -28,7 +28,7 @@ mixin header(data)
                             .header__basket-link
                                 span.header__basket-link-icon
                                     +icon('basket', 'svg-basket', 25, 21)
-                                    span.header__basket-link-icon-num 5
+                                    span.header__basket-link-icon-num 1
                                 span.header__basket-link-title.hidden-xs-down
                                     span.priceCountUp 1350
                                     |₽
@@ -82,7 +82,7 @@ mixin header(data)
                 br
                 ul.headerMobile__menuBlock-list
                     li
-                        a(href="#").headerMobile__menuBlock-item
+                        a(href="#").headerMobile__menuBlock-item.active
                             span.headerMobile__menuBlock-item-icon: +icon('pizza')
                             span.headerMobile__menuBlock-item-title Пицца
                     li
@@ -202,7 +202,7 @@ mixin header(data)
                                         a(href="#").header__basket-link
                                             span.header__basket-link-icon
                                                 +icon('basket', 'svg-basket', 25, 21)
-                                                span.header__basket-link-icon-num 5
+                                                span.header__basket-link-icon-num 1
                                             span.header__basket-link-title
                                                 span.priceCountUp 0
                                                 |₽

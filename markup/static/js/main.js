@@ -109,57 +109,69 @@ $(window).on({
 });
 
 if ($.fn.slick) {
-//     $bottom__slider.slick({
-//         slidesToShow: 1,
-//         slidesToScroll: 1,
-//         dots: true,
-//         arrows: true,
-//         autoplay: true,
-//         autoplaySpeed: 4000,
-//         adaptiveHeight: true,
-//         appendDots: '.header-bottom__slider-dots',
-//         prevArrow: '.header-bottom__slider-arrows.previous',
-//         nextArrow: ".header-bottom__slider-arrows.next",
-//     }).on('afterChange', checkBg);
-//     checkBg();
-//
-//     $('.header__slider-el').slick({
-//         slidesToShow: 1,
-//         slidesToScroll: 1,
-//         dots: true,
-//         arrows: true,
-//         prevArrow: $('.header__slider .slick-prev'),
-//         nextArrow: $('.header__slider .slick-next'),
-//         appendDots: $('.header__sliderDots')
-//         // autoplay: true,
-//         // autoplaySpeed: 3000,
-//         // adaptiveHeight: true,
-//     });
-//
-//     var itemDetaliSlider = $('.item-detali-slider-view');
-//     var itemDetaliSliderPreview = $('.item-detali-slider-preview');
-//     itemDetaliSlider.slick({
-//         slidesToShow: 1,
-//         slidesToScroll: 1,
-//         dots: false,
-//         arrows: false,
-//         infinite: false,
-//         adaptiveHeight: true,
-//         asNavFor: itemDetaliSliderPreview,
-//         responsive: [
-//             {
-//                 breakpoint: 768,
-//                 settings: {
-//                     dots: true,
-//                 }
-//             },
-//         ]
-//         // autoplay: true,
-//         // autoplaySpeed: 3000,
-//         // prevArrow: "<button class='slick-prev slick-arrow'><i class='s-arrow-prev'></i></button>",
-//         // nextArrow: "<button class='slick-next slick-arrow'><i class='s-arrow-next'></i></button>",
-//     });
-//
+    $('.reviews__list').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='slick-prev slick-arrow'><svg class='arrowLeft' width='19px' height='19px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrowLeft'></use></svg></button>",
+        nextArrow: "<button class='slick-next slick-arrow'><svg class='arrowRight' width='19px' height='19px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrowRight'></use></svg></button>",
+        // prevArrow: $('.header__slider .slick-prev'),
+        // nextArrow: $('.header__slider .slick-next'),
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        // adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
+    });
+
+    $('.listItem').slick({
+        slidesToShow: 1,
+        variableWidth: true,
+        // slidesToScroll: 3,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='slick-prev slick-arrow'><svg class='arrowLeft' width='19px' height='19px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrowLeft'></use></svg></button>",
+        nextArrow: "<button class='slick-next slick-arrow'><svg class='arrowRight' width='19px' height='19px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrowRight'></use></svg></button>",
+        // prevArrow: $('.header__slider .slick-prev'),
+        // nextArrow: $('.header__slider .slick-next'),
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    variableWidth: false,
+                }
+            },
+            {
+                breakpoint: 520,
+                settings: {
+                    variableWidth: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    adaptiveHeight: true,
+                }
+            },
+        ]
+    });
+
 //     itemDetaliSliderPreview.slick({
 //         slidesToShow: 4,
 //         slidesToScroll: 1,
@@ -172,17 +184,6 @@ if ($.fn.slick) {
 //         focusOnSelect: true,
 //         // autoplay: true,
 //         // autoplaySpeed: 3000,
-//         prevArrow: "<button class='slick-prev slick-arrow'><svg class='icon__arrow-top' width='19px' height='19px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrowTop'></use></svg></button>",
-//         nextArrow: "<button class='slick-next slick-arrow'><svg class='icon__arrow-bottom' width='19px' height='19px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrowBottom'></use></svg></button>",
-//         responsive: [
-//         //     {
-//         //         breakpoint: 768,
-//         //         settings: {
-//         //             dots: false,
-//         //             arrows: false,
-//         //         }
-//         //     },
-//         ]
 //     });
 }
 // стилизация селектов

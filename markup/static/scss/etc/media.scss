@@ -32,9 +32,24 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .index-banner-list {
+    padding: 50px 35px;
+    &__title {
+      font-size: 40px;
+    }
+    &__list {
+      margin: -25px -15px;
+      li{
+        padding: 25px 15px;
+        font-size: 19px;
+        line-height: 25px;
+      }
+    }
+  }
+
   .category {
     &-list {
-      padding: -15px -20px;
+      margin: -15px -20px;
     }
     &-item{
       padding: 15px 20px;
@@ -89,6 +104,28 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+
+  .listItem {
+    .item-list__section {
+      width: 100%;
+    }
+    .item-list__section_big {
+      width: 100%;
+    }
+  }
+
+  .title-big{
+    font-size: 37px;
+  }
+
+  .reviews {
+    padding: 35px 30px;
+    background-image: none;
+    &__list{
+      padding: 0;
+    }
+  }
+
   .basket-result__priceAll{
     float: none;
     margin: 0 auto;
@@ -212,10 +249,38 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xl)) {
-
+  .inner-banner__title_big {
+    font-size: 84px;
+    line-height: 79px;
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .btn-big {
+    padding: 18px 36px;
+    font-size: 19px;
+  }
+  .index-banner-list {
+    margin: 0 -20px;
+    border-radius: 0;
+    padding: 30px 10px;
+    &__title{
+      font-size: 27px;
+    }
+    &__list {
+      margin: -15px -8px;
+      li{
+        width: 50%;
+        font-size: 15px;
+        line-height: 19px;
+        padding: 15px 8px;
+      }
+      &-item-img{
+        height: 88px;
+        margin-bottom: 15px;
+      }
+    }
+  }
 
   .live-meals-block{
     margin: 0 -20px;
@@ -380,11 +445,13 @@ body, html{
   }
   .category {
     &-list {
-      padding: -15px -10px;
+      margin: -15px -10px;
       > * {
-        padding: 15px 10px;
         width: 33.33%;
       }
+    }
+    &-item{
+      padding: 15px 10px;
     }
   }
 
@@ -528,6 +595,19 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .title-big{
+    font-size: 28px;
+  }
+  .reviews {
+    &__title {
+      font-size: 40px;
+    }
+    &__item {
+      font-size: 15px;
+      padding: 0 10px;
+    }
+  }
+
   .live-meals {
     &__item {
       font-size: 13px;

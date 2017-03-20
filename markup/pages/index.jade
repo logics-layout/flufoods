@@ -1,26 +1,145 @@
 extends main
 
+include ../components/item/item
+
 block head
     - var headData = {title: "Главная"}
-    - var breadcrumb = true
-    - var index = 'header_index'
 
-    //link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+    link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
     .container
-        p sadasdas
-        p sadasdas
-        p sadasdas
-        p sadasdas
-        p sadasdas
-        p sadasdas
-        p sadasdas
-        p sadasdas
-        p sadasdas
+        br.hidden-lg-up
+        .inner-banner(style="background-image: url('%=static=%img/content/index-banner.jpg');")
+            .inner-banner__content
+                .text-center
+                    p.inner-banner__title.inner-banner__title_big Удобный заказ
+                        br
+                        |еды онлайн
+                    br
+                    button.btn.btn-green.btn-md(style="width: 201px;height: 62px;") Заказать
+            .inner-banner__character.text-right.hidden-lg-down: +img('content/sup-character_banner', 'svg')(style='width: 451px;')
+
+        .category-list-indexList
+            ul.category-list
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('pizza', 'svg-pizza', 46, 45)
+                        span.category-item-title Пицца
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('pasta', 'svg-pasta', 61, 47)
+                        span.category-item-title Паста
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('plov', 'svg-plov', 64, 44)
+                        span.category-item-title Плов
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('wok', 'svg-wok', 45, 48)
+                        span.category-item-title Вок
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('sushi', 'svg-sushi', 62, 39)
+                        span.category-item-title Суши
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('sup', 'svg-sup', 47, 45)
+                        span.category-item-title Супы
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('gril', 'svg-gril', 37, 54)
+                        span.category-item-title Гриль
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('salat', 'svg-salat', 46, 40)
+                        span.category-item-title Салаты
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('dessert', 'svg-dessert', 48, 42)
+                        span.category-item-title Десерты
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('juice', 'svg-juice', 34, 45)
+                        span.category-item-title Напитки
+
+    hr
+
+    .container
+        .text-center
+            p.title-big Популярное из&nbsp;
+                span.title-big__border-bottom меню
+        .listItem
+            - for(var i = 0; i<4; i++)
+                .listItem__section
+                    +item(i)
+
+
+
+    hr
+
+    .container
+        .index-banner-list
+            p.index-banner-list__title.text-center Почему Flyfoods – это полный улёт?
+            ul.index-banner-list__list.text-center
+                li.index-banner-list__list-item
+                    .index-banner-list__list-item-img: +img('content/sup-character', 'svg')
+                    .index-banner-list__list-item-text: span Во-первых, это проект
+                        br.hidden-md-down
+                        |&nbsp; Berrywood Family.
+                        br.hidden-md-down
+                        |&nbsp; Значит, качественно.
+                li.index-banner-list__list-item
+                    .index-banner-list__list-item-img: +img('content/wok-character', 'svg')
+                    .index-banner-list__list-item-text: span Во-вторых,
+                        br.hidden-md-down
+                        |&nbsp; неправдоподоно выгодная
+                        br.hidden-md-down
+                        |&nbsp; бонусная программа.
+                li.index-banner-list__list-item
+                    .index-banner-list__list-item-img: +img('content/juice-character', 'svg')
+                    .index-banner-list__list-item-text: span И в-третих, блюда
+                        br.hidden-md-down
+                        |&nbsp; доставляют в стильной
+                        br.hidden-md-down
+                        |&nbsp; эко-упаковке.
+
+            br
+
+    hr
+    .container
+        .inner-banner(style="background-image: url('%=static=%img/content/index-banner_two.jpg');")
+            .inner-banner__content
+                .text-center
+                    button.btn.btn-green.btn-big() Перейти в меню
+            .inner-banner__character.inner-banner__character_left.hidden-md-down: +img('content/hero', 'svg')(style='width: 395px;')
+
+    hr
+    .container
+        .reviews.text-center
+            p.reviews__title Отзывы
+            .reviews__list
+                -for(var i =0;i<3;i++)
+                    .reviews__item
+                        .reviews__item-img: +img('content/reviews/1')
+                        .reviews__item-title Masha Parfenova
+                        .reviews__item-text Indeed! Коллеги из #ПловНомер1 - вы молодцы! Оригинально и вкусно! #PlovCom #PlovMustGoOn #AlluNeedisPlov #FreddieMercury
+                        .reviews__item-link Оригинал отзыва
+                    .reviews__item
+                        .reviews__item-img: +img('content/reviews/2')
+                        .reviews__item-title Masha Parfenova
+                        .reviews__item-text Всех постящихся с постом! Сил вам. Я посты не держу, но сегодня попробовала первоклассный вегетарианский плов от plov.com. Вот прямо сильно рекомендую, честно-честно. В меру сладко, чтобы не стать десертом...
+                        .reviews__item-link Оригинал отзыва
+                    .reviews__item
+                        .reviews__item-img: +img('content/reviews/3')
+                        .reviews__item-title Masha Parfenova
+                        .reviews__item-text Спасибо, друзья! Очень вкусный плов. Отличное соотношение рис-мясо-морко вка-специи! Единственное пожелание - чуть больше порции! ;) Порадовала простота оформления доставки, скорость...
+                        .reviews__item-link Оригинал отзыва
+
+
 
 block script
-    //script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+    script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
     //script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
 
 

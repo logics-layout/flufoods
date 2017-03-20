@@ -94,9 +94,12 @@ body {
   border-radius: $border-radius;
   background-size: cover;
   background-position: center;
+  position: relative;
   &__content{
     display: table-cell;
     vertical-align: middle;
+    position: relative;
+    z-index: 1;
   }
   &__title{
     color: white;
@@ -104,6 +107,17 @@ body {
     font-weight: 900;
     line-height: 79px;
     margin: 0;
+  }
+  &__character{
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 30px 25px;
+    &_left{
+      right: auto;
+      left: 0;
+    }
   }
 }
 
@@ -310,6 +324,24 @@ body {
         svg{
           position: relative;
           z-index: 1;
+          &.svg-sushi{
+            margin-top: 9px;
+          }
+          &.svg-salat{
+            margin-top: 9px;
+          }
+          &.svg-dessert{
+            margin-top: 7px;
+          }
+          &.svg-juice{
+            margin-top: 9px;
+          }
+          &.svg-sup{
+            margin-top: 5px;
+          }
+          &.svg-plov{
+            margin-top: 6px;
+          }
         }
       }
     }
@@ -827,4 +859,178 @@ body {
 }
 .page__content{
   //padding-top: 255px;
+}
+
+.category-list-indexList{
+  padding-top: 40px;
+
+  .category {
+    &-item {
+      &.active, &:hover, &:focus {
+        .category-item-icon {
+          fill: #fff;
+        }
+      }
+      &-icon {
+        fill: $green;
+        &-content {
+          &:after {
+            background-color: $green;
+          }
+        }
+      }
+    }
+  }
+}
+
+.index-banner-list{
+  background-color: #04d959;
+  border-radius: 30px;
+  color: white;
+  font-weight: 500;
+  padding: 50px;
+  &__title{
+    font-size: 50px;
+    line-height: normal;
+    margin-bottom: 50px;
+  }
+  &__list{
+    @include nl;
+    font-size: 0;
+    width: 1050px;
+    max-width: 100%;
+    margin: 0 auto;
+    //margin: 0 -20px;
+    li{
+      display: inline-block;
+      vertical-align: top;
+      font-size: 23px;
+      line-height: 28px;
+      padding: 0 20px;
+      width: 33.33%;
+    }
+    &-item{
+      &-img{
+        height: 156px;
+        margin-bottom: 40px;
+        img{
+          display: inline-block;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.reviews{
+  background-color: #26daf5;
+  border-radius: 30px;
+  padding: 35px 65px;
+  padding-bottom: 125px;
+  background-position: right bottom;
+  background-image: url('%=static=%content/reviews_bg.png');
+  background-repeat: no-repeat;
+  &__title{
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .slick-arrow{
+    @include btn-clear;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    fill: #fff;
+    &:hover{
+      svg{
+        transform: scale(1.2);
+      }
+    }
+    svg{
+      width: 18px;
+      height: 31px;
+      @include tr;
+    }
+    &.slick-prev{
+      right: 100%;
+    }
+    &.slick-next{
+      left: 100%;
+    }
+  }
+  &__list{
+    padding: 0 20px;
+  }
+  &__item{
+    color: white;
+    font-size: 17px;
+    line-height: 21px;
+    outline: none;
+    padding: 0 20px;
+    &-img{
+      border-radius: 50%;
+      overflow: hidden;
+      width: 71px;
+      height: 71px;
+      display: inline-block;
+    }
+    &-title{
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    &-text{
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    &-link{
+      font-weight: 300;
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.listItem{
+  width: 1187px;
+  max-width: 100%;
+  margin: 0 auto;
+  .item__clear{
+    display: none;
+  }
+  .item-list__section{
+    width: 286px;
+    //width: 256px;
+  }
+  .item-list__section_big{
+    width: 616px;
+  }
+  .slick-arrow{
+    @include btn-clear;
+    position: absolute;
+    z-index: 1;
+    height: 320px;
+    top: 0;
+    fill: #000;
+    &:hover{
+      svg{
+        transform: scale(1.2);
+      }
+    }
+    svg{
+      display: block;
+      width: 18px;
+      height: 31px;
+      @include tr;
+    }
+    &.slick-prev{
+      right: 100%;
+    }
+    &.slick-next{
+      left: 100%;
+    }
+  }
 }

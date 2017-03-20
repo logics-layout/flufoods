@@ -142,6 +142,7 @@ if ($.fn.slick) {
     $('.listItem').slick({
         slidesToShow: 1,
         variableWidth: true,
+        infinite: true,
         // slidesToScroll: 3,
         dots: false,
         arrows: true,

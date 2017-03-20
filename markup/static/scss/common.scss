@@ -1001,12 +1001,15 @@ body {
   .item__clear{
     display: none;
   }
+  &__sectio{
+    outline: none;
+  }
   .item-list__section{
-    width: 286px;
+    width: 296px;
     //width: 256px;
   }
   .item-list__section_big{
-    width: 616px;
+    width: 600px;
   }
   .slick-arrow{
     @include btn-clear;
@@ -1014,9 +1017,10 @@ body {
     z-index: 1;
     height: 320px;
     top: 0;
-    fill: #000;
+    fill: #eee;
     &:hover{
       svg{
+        fill: $green;
         transform: scale(1.2);
       }
     }

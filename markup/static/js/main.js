@@ -273,19 +273,28 @@ var IScrollFn = function () {
 };
 IScrollFn();
 
+
+
 var priceCountUp = $('.priceCountUp');
-options = {
-    useEasing: true,
-    useGrouping: true,
-    separator: '',
-    decimal: '.',
-    prefix: '',
-    suffix: ''
+window.addCount = function (count, el) {
+    el = el?$(el):priceCountUp;
+    options = {
+        useEasing: true,
+        useGrouping: true,
+        separator: '',
+        decimal: '.',
+        prefix: '',
+        suffix: ''
+    };
+
+    var priceEl = priceCountUp.eq(0);
+    var price = +priceEl.text();
+    priceCountUp.each(function () {
+        demo = new CountUp(this, price, price+ +count, 0, 1, options);
+        demo.start();
+    });
 };
-priceCountUp.each(function () {
-    demo = new CountUp(this, 0, 1350, 0, 1, options);
-    demo.start();
-});
+
 
 var toggleStyle  = $('.toggle-style');
 var checkToggleStyle = function () {
@@ -313,6 +322,16 @@ var checkToggleStyle = function () {
 };
 checkToggleStyle();
 toggleStyle.find('input').change(checkToggleStyle);
+$('.toggle-style__el').click(function () {
+    var input = $(this).parents('.toggle-style').find('input');
+    var prev = input.not(':checked');
+    var checked = input.filter(':checked')[0];
+    if(checked)
+        checked.checked = false;
+    if(prev[0])
+        prev[0].checked = true;
+        prev.change();
+});
 
 
 if($.fn.datetimepicker){
@@ -322,10 +341,56 @@ if($.fn.datetimepicker){
             opts = {
                 lang: 'ru',
                 format: 'd.m.Y H:i:s',
+                parentID: _this.parent(),
                 scrollMonth: false,
+                hourMin:11,
+                hourMax:17,
+                hourGrid: 1,
+                stepMinute: 30,
+                allowTimes:[
+                    '09:00',
+                    '09:30',
+                    '10:00',
+                    '10:30',
+                    '11:00',
+                    '11:30',
+                    '12:00',
+                    '12:30',
+                    '13:00',
+                    '13:30',
+                    '14:00',
+                    '14:30',
+                    '15:00',
+                    '15:30',
+                    '16:00',
+                    '16:30',
+                    '17:00',
+                    '17:30',
+                    '18:00',
+                    '18:30',
+                    '19:00',
+                    '19:30',
+                    '20:00',
+                    '20:30',
+                    '21:00',
+                    '21:30',
+                    '22:00',
+                    '22:30',
+                    '23:00',
+                    '23:30'
+                ],
                 onChangeDateTime: function(dp, $input){
+                    var setting = $input.attr('data-setting'),
+                        format = 'd F Y';
+                    try{
+                        setting = JSON.parse(setting);
+                        format = setting.format;
+                    }catch (e){
+                        setting = false;
+                    }
+
                     var DateFormatterO = new DateFormatter();
-                    var parseDate = DateFormatterO.formatDate(dp, 'd F Y');
+                    var parseDate = DateFormatterO.formatDate(dp, format);
                     var parseTimeH = DateFormatterO.formatDate(dp, 'H');
                     var parseTimeI = DateFormatterO.formatDate(dp, 'i');
                     var parseTimeS = DateFormatterO.formatDate(dp, 's');
@@ -340,7 +405,7 @@ if($.fn.datetimepicker){
                     H.text(parseTimeH);
                     i.text(parseTimeI);
                     s.text(parseTimeS);
-                }
+                },
             };
         _this.datetimepicker($.extend(true, setting, opts)).trigger('blur.xdsoft');
     })
@@ -382,6 +447,73 @@ $('.add-basket').click(function () {
         }
     });
 
+    addCount(100);
    return false;
 });
 
+var maxCountItem = 30;
+var setCount = function(val, element) {
+    var input, values;
+    input = $(element).parent().find('input');
+    values = +input.val();
+    if (val === '') {
+        val = values;
+    } else {
+        val = values + val;
+    }
+    if (val < 1 || isNaN(val)) {
+        val = 1;
+    }
+    if (val > maxCountItem) {
+        val = maxCountItem;
+    }
+    input.val(val).change();
+};
+
+$(document).on('click', '.count__btn', function (e){
+   var _this = $(this),
+       val = _this.hasClass('count__btn_plus')?1:-1;
+
+    setCount(val, this);
+    return false;
+});
+
+if ($.fn.magnificPopup) {
+    var magnificPopupObj = {
+        delegate: 'a',
+        type: 'image',
+        tLoading: "",
+        mainClass: "",
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1]
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+        },
+        iframe: {
+            // markup: '<div class="mfp-iframe-scaler">' +
+            // '<div class="mfp-close"></div>' +
+            // '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+            // '</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
+
+            patterns: {
+                youtube: {
+                    index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+
+                    id: 'v=', // String that splits URL in a two parts, second part should be %id%
+                    // Or null - full URL will be returned
+                    // Or a function that should return %id%, for example:
+                    // id: function(url) { return 'parsed id'; }
+
+                    src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe.
+                }
+            }
+        }
+    };
+
+    $('.magnificPopup').each(function () {
+        $(this).magnificPopup(magnificPopupObj);
+    })
+}

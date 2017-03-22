@@ -385,7 +385,7 @@ body {
     width: 0;
     background-color: #04d958;
     border-radius: 27px;
-    @include tr;
+    //@include tr;
   }
 }
 
@@ -660,10 +660,10 @@ body {
         font-size: 15px;
         font-weight: 300;
         line-height: normal;
-        overflow: hidden;
+        //overflow: hidden;
         display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        //white-space: nowrap;
+        //text-overflow: ellipsis;
       }
     }
   }

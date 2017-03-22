@@ -194,7 +194,11 @@ small{
     color: white;
     font-size: 14px;
     font-weight: 900;
-    line-height: 0;
+    line-height: normal;
+    span{
+      margin-top: -1px;
+      display: block;
+    }
     &_minus{}
     &_plus{}
     &:hover{
@@ -216,6 +220,9 @@ small{
       width: 20px;
       height: 20px;
       font-size: 18px;
+      span{
+        //margin-left: -1px;
+      }
     }
     .count__input{
       font-size: 16px;
@@ -357,16 +364,8 @@ b{
   color: $green;
 }
 
-.bootstrap-select.btn-group:not(.dropup) .dropdown-menu{
-    margin-top: -9px;
-}
 .bootstrap-select.btn-group{
   position: relative;
-  .dropdown-menu {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-top: none;
-  }
   .dropdown-toggle{
     background-color: white;
     border: 1px solid lightgrey;
@@ -393,15 +392,44 @@ b{
       }
     }
   }
-  &.open{
+  &.min{
     .dropdown-toggle{
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-      border-color: $green;
-      .bs-caret {
-        transform: rotate(180deg);
-        .caret {
-          border-top-color: $green;
+      height: 23px;
+      border: none;
+      line-height: normal;
+      padding: 0;
+      .filter-option{
+        line-height: normal;
+        color: #04d959;
+        font-size: 13px;
+        font-weight: 300;
+      }
+      .bs-caret{
+        display: none;
+      }
+    }
+    &.open{
+    }
+  }
+  &:not(.min){
+    &:not(.dropup) .dropdown-menu{
+      margin-top: -9px;
+    }
+    .dropdown-menu {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      border-top: none;
+    }
+    &.open{
+      .dropdown-toggle{
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-color: $green;
+        .bs-caret {
+          transform: rotate(180deg);
+          .caret {
+            border-top-color: $green;
+          }
         }
       }
     }
@@ -534,6 +562,7 @@ b{
     position: relative;
     display: block;
     margin-top: -2px;
+    cursor: pointer;
     &:after{
       content: '';
       background-color: #fff;
@@ -688,6 +717,7 @@ b{
   border: 1px solid rgb(4, 217, 89);
   border-radius: 30px;
   padding: 20px 0;
+  top: inherit !important;
 
 
   .xdsoft_next, .xdsoft_prev{

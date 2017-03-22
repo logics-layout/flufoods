@@ -35,9 +35,7 @@ block content
                     - for(var i = 0; i<4; i++)
                         +item(i, 'offText')
 
-
                     +item(i, 'offText', true)
-
         br
         br
         .basket-result
@@ -52,9 +50,9 @@ block content
                                         +icon('people')
                                     .basket-result__list-desc-count
                                         .count.count_big
-                                            button.count__btn.count__btn_minus -
+                                            button.count__btn.count__btn_minus: span -
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus +
+                                            button.count__btn.count__btn_plus: span +
                         .basket-result-section
                             .basket-result__list
                                 .basket-result__list-title Приборы
@@ -63,9 +61,9 @@ block content
                                         +icon('plug')
                                     .basket-result__list-desc-count
                                         .count.count_big
-                                            button.count__btn.count__btn_minus -
+                                            button.count__btn.count__btn_minus: span -
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus +
+                                            button.count__btn.count__btn_plus: span +
                         .basket-result-section
                             .basket-result__list
                                 .basket-result__list-title.basket-result__list-title_empty &nbsp;
@@ -74,9 +72,9 @@ block content
                                         +icon('spoon')
                                     .basket-result__list-desc-count
                                         .count.count_big
-                                            button.count__btn.count__btn_minus -
+                                            button.count__btn.count__btn_minus: span -
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus +
+                                            button.count__btn.count__btn_plus: span +
                         .basket-result-section
                             .basket-result__list
                                 .basket-result__list-title.basket-result__list-title_empty &nbsp;
@@ -85,9 +83,9 @@ block content
                                         +icon('sticks')
                                     .basket-result__list-desc-count
                                         .count.count_big
-                                            button.count__btn.count__btn_minus -
+                                            button.count__btn.count__btn_minus: span -
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus +
+                                            button.count__btn.count__btn_plus: span +
                 .col-lg-4
                     .hidden-lg-up
                         br
@@ -101,7 +99,7 @@ block content
 
 block script
     //script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
-    //script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
+    script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
 
 
 

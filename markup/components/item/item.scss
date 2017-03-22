@@ -37,6 +37,10 @@
     text-align: center;
     display: table;
     position: relative;
+    img{
+      width: 100%;
+      border-radius: $border-radius;
+    }
     &.animate{
       position: absolute;
       margin: 0;

@@ -3035,7 +3035,7 @@ var DateFormatter;
             var $elem = $(elem),
                 $parent = $elem['offsetParent' in $.fn ? 'offsetParent' : 'parent']();
             if (!$parent.length) {
-                $parent = $('body');
+                $parent = $('.page__wrapper');
             }
             return parseInt($parent.css('fontSize'), 10) || parseInt($elem.css('fontSize'), 10) || 16;
         },

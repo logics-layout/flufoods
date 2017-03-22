@@ -59,7 +59,7 @@ block content
                 p.title-default.title-default_marginMin.title-default_marginMin_small.title-default_small День Рождения
                 div.dateView-content
                     .dateView
-                        input.dateView__input(value="28.03.2017", data-setting='{"format":"d.m.Y", "timepicker":false}')
+                        input.dateView__input(value="28.03.2017", data-setting='{"format":"d F Y", "timepicker":false}')
                         .dateView__section
                             .dateView__item.dateView__item_date
                                 span.dateView_view-date 31 сентября
@@ -76,7 +76,7 @@ block content
                     span.style-checkbox__el
                     span.style-checkbox__title.style-checkbox__title_big Я принимаю условия
                         br
-                        a(href="#").color-green Пользовательского соглашение
+                        a(href="#", data-toggle="modal", data-target="#itemDetal11").color-green Пользовательского соглашение
                 br
                 br
                 p.title-default.title-default_marginMin.title-default_small Подтверждение номера

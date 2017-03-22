@@ -1,4 +1,15 @@
 mixin modal()
+    #itemDetal11(class="modal fade")
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-body
+                    button(type="button", class="close", data-dismiss="modal", aria-hidden="true"): +icon('clear')
+
+                    p sadasdsdasdasdasd
+
+                    br
+
+
     #itemDetali(class="modal fade")
         .modal-dialog.modal-lg
             .modal-content
@@ -8,8 +19,12 @@ mixin modal()
                     button(type="button", class="close", data-dismiss="modal", aria-hidden="true"): +icon('clear')
                     .row
                         .col-md-5.col-xs-12
-                            a.modal__item-img(href="#", style="background-image: url('http://lorempixel.com/608/286/food?sa=sad');")
-                                span.modal__item-img-icon: +icon('increase')
+                            .magnificPopup
+                                a.modal__item-img(href="http://lorempixel.com/608/286/food?sa=sad", style="background-image: url('http://lorempixel.com/608/286/food?sa=sad');")
+                                    span.modal__item-img-icon: +icon('increase')
+                                a.modal__item-img(href="http://lorempixel.com/608/286/food?sa=sad", style="display: none;")
+                                a.modal__item-img(href="http://lorempixel.com/608/286/food?sa=sad", style="display: none;")
+                                a.modal__item-img(href="http://lorempixel.com/608/286/food?sa=sad", style="display: none;")
 
                             br
                             .mess-live-desc
@@ -29,15 +44,25 @@ mixin modal()
                             .modal__item-descLeft
                                 .modal__item-titles
                                     p.modal__item-title Пицца Мясная
-                                    p.modal__item-titleSub выбрать тесто
+
+                                    .dropdown
+                                        select.min
+                                            option выбрать тесто
+                                            option item 1
+                                            option item 2
+                                            option item 3
+                                        //a(href='#', data-toggle="dropdown").modal__item-titleSub выбрать тесто
+                                        //ul(class="dropdown-menu" role="menu" aria-labelledby="dLabel")
+                                        //    li(role="presentation"): a(href="#") item
+                                        //    li(role="presentation"): a(href="#") item 2
 
                                 span.modal__item-price 370
-                                    b .–
+                                    b ₽
                                 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 span.count.count_big
-                                    button.count__btn.count__btn_minus -
+                                    button.count__btn.count__btn_minus: span -
                                     input(value='1').count__input
-                                    button.count__btn.count__btn_plus +
+                                    button.count__btn.count__btn_plus: span +
 
                                 br.hidden-sm-down
                                 br

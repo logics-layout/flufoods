@@ -458,6 +458,9 @@ body, html{
   .item-list {
     &__section {
       width: 50%;
+      &_big{
+        width: 100%;
+      }
     }
   }
   .item {
@@ -595,6 +598,32 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .xdsoft_datetimepicker{
+    left: 0 !important;
+    .xdsoft_datepicker{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  .index-banner-list {
+    &__list {
+      li {
+        width: 100%;
+      }
+    }
+  }
+
+  .item-list {
+    &__section {
+      &_big{
+        .item__img{
+          background-image: none !important;
+          height: auto;
+        }
+        //width: 100%;
+      }
+    }
+  }
   .title-big{
     font-size: 28px;
   }

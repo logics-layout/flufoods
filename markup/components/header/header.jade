@@ -30,7 +30,7 @@ mixin header(data)
                                     +icon('basket', 'svg-basket', 25, 21)
                                     span.header__basket-link-icon-num 1
                                 span.header__basket-link-title.hidden-xs-down
-                                    span.priceCountUp 1350
+                                    span.priceCountUp 0
                                     |₽
 
                         a.headerMobile__sections-section(data-block="#ccccc", href='#')
@@ -67,9 +67,9 @@ mixin header(data)
                                     span.db.headerMobile__basketBlock-item-titleSub Тонкое тесто
                                     span.db.text-right
                                         span.count.count_big
-                                            button.count__btn.count__btn_minus -
+                                            button.count__btn.count__btn_minus: span -
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus +
+                                            button.count__btn.count__btn_plus: span +
                 .headerMobile__basketBlock-bottom.text-center
                     .headerMobile__basketBlock-resultPrice Итого:&nbsp;
                         b 1350₽
@@ -217,9 +217,9 @@ mixin header(data)
                                                             span.header__basket-item-price 270₽
                                                             |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             span.count
-                                                                button.count__btn.count__btn_minus -
+                                                                button.count__btn.count__btn_minus: span -
                                                                 input(value='1').count__input
-                                                                button.count__btn.count__btn_plus +
+                                                                button.count__btn.count__btn_plus: span +
                                                     .header__basket-item
                                                         a(href="#").header__basket-item-img: +img('content/header__basket-item/1')
                                                         span.header__basket-item-desc
@@ -227,9 +227,9 @@ mixin header(data)
                                                             span.header__basket-item-price 270₽
                                                             |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             span.count
-                                                                button.count__btn.count__btn_minus -
+                                                                button.count__btn.count__btn_minus: span -
                                                                 input(value='1').count__input
-                                                                button.count__btn.count__btn_plus +
+                                                                button.count__btn.count__btn_plus: span +
                                                     .header__basket-item
                                                         a(href="#").header__basket-item-img: +img('content/header__basket-item/1')
                                                         span.header__basket-item-desc
@@ -237,9 +237,9 @@ mixin header(data)
                                                             span.header__basket-item-price 270₽
                                                             |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             span.count
-                                                                button.count__btn.count__btn_minus -
+                                                                button.count__btn.count__btn_minus: span -
                                                                 input(value='1').count__input
-                                                                button.count__btn.count__btn_plus +
+                                                                button.count__btn.count__btn_plus: span +
                                                     .header__basket-item
                                                         a(href="#").header__basket-item-img: +img('content/header__basket-item/2')
                                                         span.header__basket-item-desc
@@ -247,9 +247,9 @@ mixin header(data)
                                                             span.header__basket-item-price 270₽
                                                             |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             span.count
-                                                                button.count__btn.count__btn_minus -
+                                                                button.count__btn.count__btn_minus: span -
                                                                 input(value='1').count__input
-                                                                button.count__btn.count__btn_plus +
+                                                                button.count__btn.count__btn_plus: span +
                                                 br
                                                 br
                                                 button.header__basket-btn Оформить заказ

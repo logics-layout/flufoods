@@ -27,6 +27,7 @@ mixin item(num, fn, banner)
             - else
                 -if(num == 0)
                     span.db.item__img(style="background-image: url('http://lorempixel.com/608/286/food?ww="+num+"');")
+                        +img('content/pic').hidden-sm-up
                         button.item__clear: +icon('clear')
                     span.db.item__title Набор «Green Villa Pizza»
                     span.item__col(class!=itemColWidth)
@@ -41,9 +42,9 @@ mixin item(num, fn, banner)
                             - else
                                 .text-right
                                     span.count.count_big
-                                        button.count__btn.count__btn_minus -
+                                        button.count__btn.count__btn_minus: span -
                                         input(value='1').count__input
-                                        button.count__btn.count__btn_plus +
+                                        button.count__btn.count__btn_plus: span +
 
 
                     - if(fn != 'offText')
@@ -58,13 +59,35 @@ mixin item(num, fn, banner)
                                 span.db.item__price 250₽
                             span
                                 - if(fn != 'offText')
+                                    span.count.count_big
+                                        button.count__btn.count__btn_minus: span -
+                                        input(value='1').count__input
+                                        button.count__btn.count__btn_plus: span +
                                     button.btn.btn-blue.btn-xs.add-basket Заказать
                                 - else
                                     .text-right
                                         span.count.count_big
-                                            button.count__btn.count__btn_minus -
+                                            button.count__btn.count__btn_minus: span -
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus +
+                                            button.count__btn.count__btn_plus: span +
+                        - if(fn != 'offText')
+                            span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
+                    -else if(num%3==0)
+                        span.db.item__img(style="background-image: url('http://lorempixel.com/300/300/food?ww="+num+"');")
+                            button.item__clear: +icon('clear')
+                        span.db.item__title Пицца Мясная
+                        span.item__col(class!=itemColWidth)
+                            span
+                                span.db.item__price 250₽
+                            span
+                                - if(fn != 'offText')
+                                    button.btn.btn-blue.btn-xs.add-basket Заказать
+                                - else
+                                    .text-right
+                                        span.count.count_big
+                                            button.count__btn.count__btn_minus: span -
+                                            input(value='1').count__input
+                                            button.count__btn.count__btn_plus: span +
                         - if(fn != 'offText')
                             span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
                     - else
@@ -80,9 +103,9 @@ mixin item(num, fn, banner)
                                 - else
                                     .text-right
                                         span.count.count_big
-                                            button.count__btn.count__btn_minus -
+                                            button.count__btn.count__btn_minus: span -
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus +
+                                            button.count__btn.count__btn_plus: span +
 
                         - if(fn != 'offText')
                             span.db

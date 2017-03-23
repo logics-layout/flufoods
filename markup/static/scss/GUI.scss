@@ -189,7 +189,8 @@ small{
     @include btn-clear;
     width: 16px;
     height: 16px;
-    background-color: #04d958;
+    fill: #04d958;
+    background-color: #fff;
     border-radius: 50%;
     color: white;
     font-size: 14px;
@@ -199,10 +200,14 @@ small{
       margin-top: -1px;
       display: block;
     }
+    svg{
+      display: block;
+      pointer-events: none;
+    }
     &_minus{}
     &_plus{}
     &:hover{
-      background-color: #04be4d;
+      fill: #04be4d;
     }
   }
   &__input{

@@ -42,9 +42,9 @@ mixin item(num, fn, banner)
                             - else
                                 .text-right
                                     span.count.count_big
-                                        button.count__btn.count__btn_minus: span -
+                                        button.count__btn.count__btn_minus: +icon('minus', '', 20, 20)
                                         input(value='1').count__input
-                                        button.count__btn.count__btn_plus: span +
+                                        button.count__btn.count__btn_plus: +icon('plus', '', 20, 20)
 
 
                     - if(fn != 'offText')
@@ -60,16 +60,16 @@ mixin item(num, fn, banner)
                             span
                                 - if(fn != 'offText')
                                     span.count.count_big
-                                        button.count__btn.count__btn_minus: span -
+                                        button.count__btn.count__btn_minus: +icon('minus', '', 20, 20)
                                         input(value='1').count__input
-                                        button.count__btn.count__btn_plus: span +
+                                        button.count__btn.count__btn_plus: +icon('plus', '', 20, 20)
                                     button.btn.btn-blue.btn-xs.add-basket Заказать
                                 - else
                                     .text-right
                                         span.count.count_big
-                                            button.count__btn.count__btn_minus: span -
+                                            button.count__btn.count__btn_minus: +icon('minus', '', 20, 20)
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus: span +
+                                            button.count__btn.count__btn_plus: +icon('plus', '', 20, 20)
                         - if(fn != 'offText')
                             span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
                     -else if(num%3==0)
@@ -85,9 +85,9 @@ mixin item(num, fn, banner)
                                 - else
                                     .text-right
                                         span.count.count_big
-                                            button.count__btn.count__btn_minus: span -
+                                            button.count__btn.count__btn_minus: +icon('minus', '', 20, 20)
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus: span +
+                                            button.count__btn.count__btn_plus: +icon('plus', '', 20, 20)
                         - if(fn != 'offText')
                             span.db.item__text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
                     - else
@@ -103,9 +103,9 @@ mixin item(num, fn, banner)
                                 - else
                                     .text-right
                                         span.count.count_big
-                                            button.count__btn.count__btn_minus: span -
+                                            button.count__btn.count__btn_minus: +icon('minus', '', 20, 20)
                                             input(value='1').count__input
-                                            button.count__btn.count__btn_plus: span +
+                                            button.count__btn.count__btn_plus: +icon('plus', '', 20, 20)
 
                         - if(fn != 'offText')
                             span.db

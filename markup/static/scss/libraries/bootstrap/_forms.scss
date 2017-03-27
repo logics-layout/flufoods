@@ -125,14 +125,16 @@ output {
   //border: 3px solid #dadada;
   //@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
   @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
-
+  -webkit-appearance: none;
   color: black;
   font-size: 17px;
   font-weight: 300;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #d3d3d3;
-  //box-shadow: inset 0.1px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  padding-left: 0;
+  box-shadow: none;
 
   // Customize the `:focus` state to imitate native WebKit styles.
   @include form-control-focus(#d3d3d3);

@@ -1,5 +1,5 @@
 html{
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 body, html{
   min-width: 320px;
@@ -231,6 +231,10 @@ body, html{
     &__meals {
       width: 400px;
     }
+    &__right{
+      width: 495px;
+      max-width: 100%;
+    }
   }
   .stock {
     &_personal {
@@ -256,6 +260,24 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .address{
+    margin: -5px;
+    &__section{
+      padding: 5px;
+      .input-anim__label {
+        font-size: 13px;
+      }
+      .input-anim{
+        margin-top: 0;
+      }
+    }
+  }
+  .popover-content {
+    padding: 13px 14px;
+  }
+  .input-anim_active .input-anim__label {
+    font-size: 13px;
+  }
   .btn-big {
     padding: 18px 36px;
     font-size: 19px;
@@ -360,22 +382,26 @@ body, html{
     }
     &__contacts {
       margin: 3px -20px;
-      display: block;
+      //display: block;
+      display: table;
+      width: 100%;
       width: auto;
       &-item {
-        display: block;
+        display: table-row;
+        //display: block;
         font-size: 0;
         padding: 10px 0;
         &:nth-of-type(2n){
-          background-color: #eee;
+          //background-color: #eee;
         }
         > * {
-          display: inline-block;
-          vertical-align: middle;
-          padding: 3px 10px;
+          display: table-cell;
+          //display: inline-block;
+          //vertical-align: middle;
+          //padding: 3px 10px;
 
           + * {
-            padding-left: 10px;
+            //padding-left: 10px;
           }
           &:empty{
             padding: 0 !important;
@@ -384,8 +410,8 @@ body, html{
         &_after{
           border-bottom: 1px solid #ddd;
           >*{
-            border-bottom: none;
-            padding: 3px 10px;
+            //border-bottom: none;
+            //padding: 3px 10px;
           }
           +*{
             >*{
@@ -397,9 +423,12 @@ body, html{
         }
         &-valueBlock{
           width: 72%;
+          white-space: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         &-btnBlock{
-          width: 100%;
+          //width: 100%;
         }
       }
     }
@@ -483,7 +512,7 @@ body, html{
     font-size: 18px;
   }
   .form-control {
-    font-size: 15px;
+    //font-size: 15px;
   }
   .input-anim {
     &__label {
@@ -598,6 +627,12 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .popover.top {
+    margin-right: 18px;
+  }
+  .popover{
+    border-radius: 20px 20px 0 20px;
+  }
   .xdsoft_datetimepicker{
     left: 0 !important;
     .xdsoft_datepicker{

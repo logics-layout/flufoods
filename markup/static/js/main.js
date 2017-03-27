@@ -8,14 +8,16 @@ var headerDesktop = $('.header'),
 
 function popoverFn() {
     placement = 'right';
+    trigger = 'hover';
 
     if($(window).width() <= 991){
-        placement = 'top'
+        placement = 'top';
+        // trigger = 'click';
     }
 
     if($.fn.popover){
         $('[data-toggle="popover"]').popover('destroy').popover({
-            trigger: 'hover',
+            trigger: trigger,
             // trigger: 'click',
             placement: placement,
             container: 'body'
@@ -316,8 +318,6 @@ var checkToggleStyle = function () {
             dataToggle = $(dataToggle);
             dataToggle.stop().delay(check?300:0).fadeIn(300);
         }
-
-
     });
 };
 checkToggleStyle();

@@ -136,6 +136,11 @@ h1{
   line-height: normal;
   &__border-bottom{
     border-bottom: 3px solid;
+    color: #000;
+    &:hover{
+      color: $green;
+      text-decoration: none;
+    }
   }
 }
 
@@ -261,7 +266,8 @@ small{
         vertical-align: middle;
       }
       &:hover{
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        fill: #26daf5;
+        //box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
       }
     }
   }

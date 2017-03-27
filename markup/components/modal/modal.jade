@@ -18,7 +18,50 @@ mixin modal()
                 .modal-body
                     button(type="button", class="close", data-dismiss="modal", aria-hidden="true"): +icon('clear')
                     .row
-                        .col-md-5.col-xs-12
+                        .col-md-7.col-xs-12.col-md-push-5
+                            .modal__item-descLeft
+                                .modal__item-titles
+                                    p.modal__item-title Пицца Мясная
+
+                                    .row
+                                        .col-sm-6.col-xs-12
+                                            .dropdown
+                                                select.min
+                                                    option выбрать тесто
+                                                    option item 1
+                                                    option item 2
+                                                    option item 3
+                                span.modal__item-price 370
+                                    b ₽
+                                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                span.count.count_big
+                                    button.count__btn.count__btn_minus: +icon('minus', '', 20, 20)
+                                    input(value='1').count__input
+                                    button.count__btn.count__btn_plus: +icon('plus', '', 20, 20)
+
+                                .hidden-md-up
+                                    br
+                                .hidden-sm-down
+                                    br
+                                    br
+                                    p.modal__item-text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
+                                    br.hidden-sm-down
+                                    p.modal__item-text
+                                        | 32 см / 380 г
+                                        br
+                                        | Тесто, баклажаны, цукини, моцерелла, чесночное масло, соль, перец
+                                        br
+                                        | белки: 14,3
+                                        br
+                                        | жиры: 0,33
+                                        br
+                                        | углеводы: 8,21
+                                        br
+                                        br
+                                        | энергитическая ценность: 372 Ккал
+
+
+                        .col-md-5.col-xs-12.col-md-pull-7
                             .magnificPopup
                                 a.modal__item-img(href="http://lorempixel.com/608/286/food?sa=sad", style="background-image: url('http://lorempixel.com/608/286/food?sa=sad');")
                                     span.modal__item-img-icon: +icon('increase')
@@ -40,33 +83,9 @@ mixin modal()
                                     |бонусных баллов.
                             br
 
-                        .col-md-7.col-xs-12
+
+                        .col-md-7.col-xs-12.hidden-md-up
                             .modal__item-descLeft
-                                .modal__item-titles
-                                    p.modal__item-title Пицца Мясная
-
-                                    .dropdown
-                                        select.min
-                                            option выбрать тесто
-                                            option item 1
-                                            option item 2
-                                            option item 3
-                                        //a(href='#', data-toggle="dropdown").modal__item-titleSub выбрать тесто
-                                        //ul(class="dropdown-menu" role="menu" aria-labelledby="dLabel")
-                                        //    li(role="presentation"): a(href="#") item
-                                        //    li(role="presentation"): a(href="#") item 2
-
-                                span.modal__item-price 370
-                                    b ₽
-                                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                span.count.count_big
-                                    button.count__btn.count__btn_minus: span -
-                                    input(value='1').count__input
-                                    button.count__btn.count__btn_plus: span +
-
-                                br.hidden-sm-down
-                                br
-                                br
                                 p.modal__item-text Пикантная пицца на тонком тесте, с бараньим фаршем, кусочками тыквы, болгарским перцем, луком, моцареллой  и томатным соусом.
                                 br.hidden-sm-down
                                 p.modal__item-text

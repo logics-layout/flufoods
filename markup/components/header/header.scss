@@ -7,8 +7,8 @@
   z-index: 9;
   border-bottom: 1px solid transparent;
   &.active{
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-bottom-color: rgba(210, 210, 210, 0.39);
+    //box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    //border-bottom-color: rgba(210, 210, 210, 0.39);
   }
   >.container{
     padding-top: 18px;
@@ -86,6 +86,10 @@
     color: black;
     font-size: 15px;
     font-weight: 900;
+    &:hover{
+      text-decoration: none;
+      color: #26daf5;
+    }
   }
   &__btn{
     background-color: white;
@@ -98,7 +102,8 @@
     line-height: normal;
     padding: 2px 15px;
     &:hover, &:focus{
-      background-color: #000;
+      background-color: #26daf5;
+      border-color: #26daf5;
       color: #fff;
       text-decoration: none;
     }

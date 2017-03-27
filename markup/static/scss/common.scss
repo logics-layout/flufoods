@@ -260,7 +260,7 @@ body {
 .block-green{
   background-color: $green;
   color: #fff;
-  padding: 30px 0;
+  padding: 40px 0;
 }
 
 .category{
@@ -269,7 +269,7 @@ body {
     fill: currentColor;
     font-size: 0;
     text-align: center;
-    padding: -15px -27px;
+    margin: -15px -27px;
     >*{
       display: inline-block;
       vertical-align: middle;
@@ -304,7 +304,7 @@ body {
       display: inline-block;
       vertical-align: middle;
       height: 63px;
-      margin-bottom: 5px;
+      margin-bottom: 12px;
       &-content{
         position: relative;
         display: block;
@@ -342,11 +342,15 @@ body {
           &.svg-plov{
             margin-top: 6px;
           }
+          &.svg-pizza{
+            top: 4px;
+          }
         }
       }
     }
     &-title{
       display: block;
+      font-weight: 300;
     }
   }
 }
@@ -769,7 +773,12 @@ body {
   }
 }
 
-
+.personal__meals-title{
+  color: #181818;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 11px;
+}
 .live-meals{
   display: table;
   width: 100%;
@@ -777,7 +786,7 @@ body {
   &__item{
     color: #181818;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
     display: table-row;
     fill: currentColor;
@@ -789,6 +798,7 @@ body {
       width: 30%;
       height: 2px;
       background-color: #d5d5d5;
+      margin-top: -2px;
     }
     >*{
       display: table-cell;
@@ -828,12 +838,11 @@ body {
   top: 0;
   z-index: 8;
   &.active{
-    padding: 14px 0;
+    padding: 24px 0;
     position: fixed;
-    margin-top: 68px;
+    margin-top: 69px;
     opacity: 1;
     @include tr;
-
 
     .category-list{
       li{
@@ -868,14 +877,14 @@ body {
     &-item {
       &.active, &:hover, &:focus {
         .category-item-icon {
-          fill: #fff;
+          fill: #26daf5;
         }
       }
       &-icon {
         fill: $green;
         &-content {
           &:after {
-            background-color: $green;
+            background-color: transparent;
           }
         }
       }
@@ -1036,5 +1045,16 @@ body {
     &.slick-next{
       left: 100%;
     }
+  }
+}
+
+.address{
+  margin: -15px;
+  font-size: 0;
+  &__section{
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px;
+    width: 25%;
   }
 }

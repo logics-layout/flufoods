@@ -47,7 +47,6 @@ function checkFixCategory() {
         catalogCategoryFix.removeClass(className);
         catalogCategoryFixBuffer.height(0);
     }
-
 }
 checkFixCategory();
 page__content.on({

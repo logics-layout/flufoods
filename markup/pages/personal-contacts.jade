@@ -1,27 +1,28 @@
 extends personal-main
 
 block personal_content
+    h1(style="margin-top: 0;").hidden-md-up Личный кабинет
     .personal__contacts
         .personal__contacts-item
             div.personal__contacts-item-titleBlock
                 span.personal__contacts-item-title E-mail
             div.personal__contacts-item-valueBlock
                 span.personal__contacts-item-value janjanmicheljar@gmail.com
-            div.personal__contacts-item-btnBlock
+            div.personal__contacts-item-btnBlock.hidden-xs-down
                 a(href="#").personal__contacts-item-title.text-right изменить
         .personal__contacts-item
             div.personal__contacts-item-titleBlock
                 span.personal__contacts-item-title Пароль
             div.personal__contacts-item-valueBlock
                 span.personal__contacts-item-value обновлен 14 дней назад
-            div.personal__contacts-item-btnBlock
+            div.personal__contacts-item-btnBlock.hidden-xs-down
                 a(href="#").personal__contacts-item-title.text-right изменить
         .personal__contacts-item
             div.personal__contacts-item-titleBlock
                 span.personal__contacts-item-title Телефон
             div.personal__contacts-item-valueBlock
                 span.personal__contacts-item-value +7 (923) 299-11-56
-            div.personal__contacts-item-btnBlock
+            div.personal__contacts-item-btnBlock.hidden-xs-down
                 a(href="#").personal__contacts-item-title.text-right изменить
         .personal__contacts-item
             div.personal__contacts-item-titleBlock
@@ -30,7 +31,7 @@ block personal_content
                     |адрес
             div.personal__contacts-item-valueBlock
                 span.personal__contacts-item-value Авиаконструктора Сухого, улица 1А с1
-            div.personal__contacts-item-btnBlock
+            div.personal__contacts-item-btnBlock.hidden-xs-down
                 a(href="#").personal__contacts-item-title.text-right изменить
         .personal__contacts-item.personal__contacts-item_after
             div.personal__contacts-item-titleBlock
@@ -39,14 +40,15 @@ block personal_content
                     |адрес
             div.personal__contacts-item-valueBlock
                 span.personal__contacts-item-value Алексеева, 49, оф. 15-06
-            div.personal__contacts-item-btnBlock
+            div.personal__contacts-item-btnBlock.hidden-xs-down
                 a(href="#").personal__contacts-item-title.text-right изменить
         .personal__contacts-item
             div.personal__contacts-item-titleBlock
                 span.personal__contacts-item-title: i.s-visa
             div.personal__contacts-item-valueBlock
-                span.personal__contacts-item-value **** **** **** 0696
-            div.personal__contacts-item-btnBlock
+                span.personal__contacts-item-value(style="display: inline-block;vertical-align: middle;width: auto;") **** **** **** 0696
+                a(href="#", style="display: inline-block;margin-left: 10px;").personal__contacts-item-title.hidden-sm-up удалить
+            div.personal__contacts-item-btnBlock.hidden-xs-down
                 a(href="#").personal__contacts-item-title.text-right удалить
         .personal__contacts-item
             div.personal__contacts-item-titleBlock

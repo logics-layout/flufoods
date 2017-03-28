@@ -22,12 +22,13 @@ block content
                     li: a(href="#") Выйти
 
             .personal__right
-                .personal__ava
-                    .personal__ava-img: +img('content/personal', 'png')
-                    .personal__ava-name Жан Мишель Жар
+                .hidden-sm-down
+                    .personal__ava
+                        .personal__ava-img: +img('content/personal', 'png')
+                        .personal__ava-name Жан Мишель Жар
 
-                br
-                br.hidden-sm-down
+                    br
+                    br.hidden-sm-down
 
                 block personal_content
 

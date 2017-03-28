@@ -1,5 +1,5 @@
 html{
-  //overflow-x: hidden;
+  overflow-x: hidden;
 }
 body, html{
   min-width: 320px;
@@ -104,6 +104,9 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .num-big{
+    text-align: center;
+  }
 
   .listItem {
     .item-list__section {
@@ -249,6 +252,14 @@ body, html{
     padding-left: 20px;
   }
 
+  .modal.fade .modal-dialog{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 
 }
 
@@ -260,6 +271,14 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .basket-result__list-desc-icon{
+    width: 73px;
+    text-align: center;
+    svg{
+      display: block;
+      margin: 0 auto;
+    }
+  }
   .address{
     margin: -5px;
     &__section{
@@ -305,7 +324,7 @@ body, html{
   }
 
   .live-meals-block{
-    margin: 0 -20px;
+
   }
   .balance{
     >*{
@@ -351,7 +370,6 @@ body, html{
     &__hr{
       margin: 25px 0;
       margin-left: -20px;
-      margin-right: -20px;
     }
     >*{
       display: block;
@@ -381,7 +399,7 @@ body, html{
       }
     }
     &__contacts {
-      margin: 3px -20px;
+      margin: 3px 0;
       //display: block;
       display: table;
       width: 100%;
@@ -593,10 +611,10 @@ body, html{
   .step{
     width: auto;
     display: block;
-    margin: 0 -20px;
+    //margin: 0 -20px;
     &__after{
       //border-radius: 0 20px 20px 0;
-      border-radius: 0;
+      //border-radius: 0;
       &:after{
         //content: '';
         display: block;
@@ -607,7 +625,7 @@ body, html{
       }
     }
     &__table{
-      border-radius: 0;
+      //border-radius: 0;
     }
     &__item {
       font-size: 14px;
@@ -627,6 +645,29 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .modal__item-descLeft{
+    display: table;
+    margin: 0 auto;
+  }
+  .item__text{
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 16px;
+    color: black;
+  }
+  .step__item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .personal__contacts-item > * + * {
+    padding-left: 7px;
+  }
+  .personal__contacts-item-value{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 196px;
+  }
   .popover.top {
     margin-right: 18px;
   }
@@ -674,7 +715,10 @@ body, html{
 
   .live-meals {
     &__item {
-      font-size: 13px;
+      font-size: 11px;
+      >*{
+        padding: 12px 4px;
+      }
     }
   }
   .label {
@@ -761,10 +805,10 @@ body, html{
     }
   }
   .item-list {
-    margin: -30px 0;
+    margin: -20px 0;
     &__section {
       width: 100%;
-      padding: 30px 0;
+      padding: 20px 0;
     }
   }
   .contacts{

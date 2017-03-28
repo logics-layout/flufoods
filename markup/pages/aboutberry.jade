@@ -7,6 +7,7 @@ block head
     //link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
+    br.hidden-lg-up
     .container
         .inner-banner(style="background-image: url('%=static=%img/content/pic.png');")
             .inner-banner__content
@@ -69,8 +70,9 @@ block content
                     | среди которых AQ Kitchen обладателя мишленовской звезды Адриана Кетгласа, Delicatessen Ивана Шишкина, Brisket BBQ Аркадия Новикова.
 
     hr.hidden-sm-down
+    hr(style="margin: 0;").hidden-md-up
 
-    .container
+    .container.hidden-sm-down
         .inner-banner-list
             p.inner-banner-list__title.text-center О Green Villa Pizza
             ul.inner-banner-list__list.text-center
@@ -83,11 +85,6 @@ block content
                 li.inner-banner-list__list-item
                     .inner-banner-list__list-item-img: +img('content/pizza', 'png')
                     .inner-banner-list__list-item-text: span Специально для доставки Flyfoods опытной командой пиццейол Green Villa Pizza были разработаны новинки пицц.
-
-
-
-
-
 
 
 block script

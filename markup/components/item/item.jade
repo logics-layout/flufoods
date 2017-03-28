@@ -13,7 +13,6 @@ mixin item(num, fn, banner)
             - if(banner)
                 span.db.item__img
                     button.item__clear: +icon('clear')
-                    button.item__after: +img('content/green-villa-pizza-logo', 'svg')
                     span.db.item__img-content
                         span.db.item__img-text Закажите
                             br
@@ -36,8 +35,8 @@ mixin item(num, fn, banner)
                     span.item__col(class!=itemColWidth)
                         span
                             span.db.item__price
-                                span.item__price_descount 370₽
-                                |&nbsp;250₽
+                                span.item__price_descount 370.–
+                                |&nbsp;250.–
                         span
                             - if(fn != 'offText')
                                 span.hidden-md-down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -60,7 +59,7 @@ mixin item(num, fn, banner)
                         span.db.item__title Пицца Мясная
                         span.item__col(class!=itemColWidth)
                             span
-                                span.db.item__price 250₽
+                                span.db.item__price 250.–
                             span
                                 - if(fn != 'offText')
                                     span.count.count_big
@@ -83,7 +82,7 @@ mixin item(num, fn, banner)
                         span.db.item__title Пицца Мясная
                         span.item__col(class!=itemColWidth)
                             span
-                                span.db.item__price 250₽
+                                span.db.item__price 250.–
                             span
                                 - if(fn != 'offText')
                                     button.btn.btn-blue.btn-xs.add-basket Заказать
@@ -102,7 +101,7 @@ mixin item(num, fn, banner)
                         span.db.item__title Пицца Мясная
                         span.item__col(class!=itemColWidth)
                             span
-                                span.db.item__price 250₽
+                                span.db.item__price 250.–
                             span
                                 - if(fn != 'offText')
                                     button.btn.btn-green.btn-xs.add-basket Заказать

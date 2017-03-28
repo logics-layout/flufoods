@@ -516,3 +516,32 @@ if ($.fn.magnificPopup) {
         $(this).magnificPopup(magnificPopupObj);
     })
 }
+
+var ancestors = $('.category-open-ancestors'),
+    categoryListToggle = $('.category-list-toggle');
+
+$('.category-list a').click(function(e){
+    if($(window).width() <= 991){
+        e.preventDefault();
+        var _this = $(this),
+            block = _this.attr('data-block'),
+            time = 300;
+
+        if(block){
+            block = $(block);
+            if(block[0]){
+                categoryListToggle.fadeOut(time);
+                ancestors.delay(time).fadeIn(time);
+                block.delay(time).fadeIn(time).siblings().fadeOut(time);
+            }
+        }
+    }
+});
+
+ancestors.find('.category-ancestors__btn').click(function(){
+    var _this = $(this),
+        time = 300;
+
+    ancestors.fadeOut(time);
+    categoryListToggle.delay(time).fadeIn(time);
+});

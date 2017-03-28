@@ -104,6 +104,95 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .catalog-category-fix-buffer{
+    height: 122px;
+  }
+  .block-green{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 13px 20px;
+    padding-top: 56px+13px;
+    //height: 178px;
+    .category-list{
+      margin: -8px;
+      > * {
+        width: 20%;
+      }
+    }
+    .category-item{
+      padding: 8px;
+      &.active, &:hover, &:focus{
+        .category-item-icon{
+          &-content{
+            &:after{
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+      }
+      &-icon{
+        height: auto;
+        margin: 0;
+        svg{
+          margin: 0;
+          height: 33px;
+          &.svg-pizza{
+            width: 28px;
+            height: 27px;
+          }
+          &.svg-pasta{
+            width: 37px;
+            height: 27px;
+          }
+          &.svg-plov{
+            width: 41px;
+            height: 25px;
+          }
+          &.svg-wok{
+            width: 26px;
+            height: 28px;
+            top: 3px;
+          }
+          &.svg-sushi{
+            width: 37px;
+            height: 27px;
+            top: 5px;
+          }
+          &.svg-sup{
+            width: 29px;
+            height: 34px;
+            top: 4px;
+          }
+          &.svg-gril{
+            width: 22px;
+            top: 4px;
+          }
+          &.svg-salat{
+            width: 27px;
+            height: 24px;
+            top: 6px;
+          }
+          &.svg-dessert{
+            width: 27px;
+            height: 23px;
+            top: 4px;
+          }
+          &.svg-juice{
+            width: 19px;
+            height: 25px;
+            top: 5px;
+          }
+        }
+      }
+      &-title{
+        display: none;
+      }
+    }
+  }
+
   .num-big{
     text-align: center;
   }
@@ -250,6 +339,9 @@ body, html{
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
   .modal__item-descLeft{
     padding-left: 20px;
+  }
+  .category-list-toggle{
+    display: block !important;
   }
 
   .modal.fade .modal-dialog{
@@ -492,13 +584,13 @@ body, html{
   }
   .category {
     &-list {
-      margin: -15px -10px;
+      margin: -10px -8px;
       > * {
-        width: 33.33%;
+        width: 20%;
       }
     }
     &-item{
-      padding: 15px 10px;
+      padding: 10px 8px;
     }
   }
 

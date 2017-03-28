@@ -354,6 +354,44 @@ body {
     }
   }
 }
+.category-open-ancestors{
+  display: none;
+  &__item{
+    display: none;
+  }
+}
+.category-ancestors{
+  display: table;
+  margin: 10px 0;
+  >*{
+    display: table-cell;
+    vertical-align: middle;
+    +*{
+      padding-left: 35px;
+    }
+  }
+  &__btn{
+    margin-top: 6px;
+    @include btn-clear;
+    svg{
+      width: 16px;
+      height: 30px;
+      fill: #fff;
+      display: block;
+    }
+  }
+  &__list{
+    margin: -0px -10px;
+  }
+  &__item{
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 17px;
+    padding: 0px 10px;
+  }
+}
 
 .step{
   position: relative;

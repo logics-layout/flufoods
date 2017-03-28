@@ -8,51 +8,76 @@ block head
     //link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
-    .catalog-category-fix-buffer.hidden-md-down
-    .catalog-category-fix.block-green.hidden-md-down
-        ul.category-list
-            li
-                a(href="#").category-item.active
-                    span.category-item-icon: span.category-item-icon-content: +icon('pizza', 'svg-pizza', 46, 45)
-                    span.category-item-title Пицца
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('pasta', 'svg-pasta', 61, 47)
-                    span.category-item-title Паста
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('plov', 'svg-plov', 64, 44)
-                    span.category-item-title Плов
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('wok', 'svg-wok', 45, 48)
-                    span.category-item-title Вок
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('sushi', 'svg-sushi', 62, 39)
-                    span.category-item-title Суши
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('sup', 'svg-sup', 47, 45)
-                    span.category-item-title Супы
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('gril', 'svg-gril', 37, 54)
-                    span.category-item-title Гриль
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('salat', 'svg-salat', 46, 40)
-                    span.category-item-title Салаты
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('dessert', 'svg-dessert', 48, 42)
-                    span.category-item-title Десерты
-            li
-                a(href="#").category-item
-                    span.category-item-icon: span.category-item-icon-content: +icon('juice', 'svg-juice', 34, 45)
-                    span.category-item-title Напитки
+    .catalog-category-fix-buffer
+    .catalog-category-fix.block-green
+        .hidden-lg-up
+            .category-open-ancestors
+                .category-ancestors
+                    .category-ancestors__section
+                        button.category-ancestors__btn: +icon('arrowLeft')
+                    .category-ancestors__section
+                        .category-open-ancestors__item#ones
+                            .category-ancestors__list
+                                a(href="#").category-ancestors__item Пицца
+                                a(href="#").category-ancestors__item Паста
+                                a(href="#").category-ancestors__item Плов
+                                a(href="#").category-ancestors__item Вок
+                                a(href="#").category-ancestors__item Суши
+
+                        .category-open-ancestors__item#twos
+                            .category-ancestors__list
+                                a(href="#").category-ancestors__item Пицца1
+                                a(href="#").category-ancestors__item Паста
+                                a(href="#").category-ancestors__item Плов
+                                a(href="#").category-ancestors__item Вок
+                                a(href="#").category-ancestors__item Суши
+
+
+
+        .category-list-toggle
+            ul.category-list
+                li
+                    a(href="#", data-block="#ones").category-item.active
+                        span.category-item-icon: span.category-item-icon-content: +icon('pizza', 'svg-pizza', 46, 45)
+                        span.category-item-title Пицца
+                li
+                    a(href="#", data-block="#twos").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('pasta', 'svg-pasta', 61, 47)
+                        span.category-item-title Паста
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('plov', 'svg-plov', 64, 44)
+                        span.category-item-title Плов
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('wok', 'svg-wok', 45, 48)
+                        span.category-item-title Вок
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('sushi', 'svg-sushi', 62, 39)
+                        span.category-item-title Суши
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('sup', 'svg-sup', 47, 45)
+                        span.category-item-title Супы
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('gril', 'svg-gril', 37, 54)
+                        span.category-item-title Гриль
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('salat', 'svg-salat', 46, 40)
+                        span.category-item-title Салаты
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('dessert', 'svg-dessert', 48, 42)
+                        span.category-item-title Десерты
+                li
+                    a(href="#").category-item
+                        span.category-item-icon: span.category-item-icon-content: +icon('juice', 'svg-juice', 34, 45)
+                        span.category-item-title Напитки
     br
-    br.hidden-xs-down
+    br.hidden-md-down
     .container
         .item-list
             - for(var i = 0; i<11; i++)

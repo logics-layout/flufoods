@@ -593,6 +593,13 @@ body, html{
       padding: 10px 8px;
     }
   }
+  .category-list-indexList{
+    .category-list {
+      > * {
+        width: 33.33%;
+      }
+    }
+  }
 
   .item-list {
     &__section {

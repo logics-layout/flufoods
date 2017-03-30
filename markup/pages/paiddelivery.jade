@@ -1,13 +1,14 @@
 extends main
 
 block head
-    - var headData = {title: "Главная"}
+    - var headData = {title: "Доставка и оплата"}
     - var breadcrumb = true
 
     //link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
     .container
+        br.hidden-lg-up
         .inner-banner(style="background-image: url('%=static=%img/content/pic-2.jpg');")
             .inner-banner__content
                 p.inner-banner__title.text-center Доставка

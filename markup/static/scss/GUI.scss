@@ -136,9 +136,9 @@ h1{
   line-height: normal;
   &__border-bottom{
     border-bottom: 3px solid;
-    color: #000;
+    color: $green;
     &:hover{
-      color: $green;
+      color: $mainColor;
       text-decoration: none;
     }
   }
@@ -288,7 +288,6 @@ small{
         height: auto;
         border: none;
         &:hover{
-          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -632,6 +631,7 @@ b{
   margin: -5px -10px;
   >*{
     display: inline-block;
+    vertical-align: middle;
     padding: 5px 10px;
     font-size: 14px;
   }
@@ -641,23 +641,25 @@ b{
     }
   }
   &__icon{
-    width: 32px;
-    height: 32px;
-    background-color: $green;
-    fill: #fff;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 43px;
+    //width: 32px;
+    //height: 32px;
+    //background-color: $green;
+    fill: $green;
+    //border-radius: 50%;
+    //text-align: center;
+    //line-height: 43px;
     svg{
-      width: 11px;
-      height: 19px;
+      margin-top: -2px;
+      display: block;
+      //width: 11px;
+      //height: 19px;
     }
   }
   &__title{
     color: black;
     font-size: 21px;
     font-weight: 300;
-    line-height: normal;
+    line-height: 19px;
   }
 }
 

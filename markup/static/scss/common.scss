@@ -1041,9 +1041,15 @@ body {
 }
 
 .listItem{
-  width: 1187px;
-  max-width: 100%;
-  margin: 0 auto;
+  &-block{
+    width: 1215px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+.listItem{
+  //margin: 0 -20px;
+  padding: 0 20px;
   .item__clear{
     display: none;
   }

@@ -12,7 +12,7 @@ phantomjsdriver.log
 /nbproject/*
 
 /dev
-/builds
+
 **/sprite_96.*
 **/svg-fallback-sprite.*
 **/svg-sprite.*

@@ -24,6 +24,7 @@
   }
   &__right{
     text-align: right;
+    position: relative;
   }
   &__logo{
     width: 187px;
@@ -42,6 +43,8 @@
     }
   }
   &__nav{
+    position: relative;
+    bottom: -2px;
     ul{
       @include nl;
       font-size: 0;
@@ -177,12 +180,10 @@
       position: absolute;
       //top: 34px;
       top: 0;
-      right: 0;
+      right: 3px;
       width: 341px;
-      //overflow: auto;
-      //height: 100vh;
       @include tr;
-      padding-top: 59px;
+      padding-top: 36px;
       margin-top: 20px;
       visibility: hidden;
       opacity: 0;
@@ -201,7 +202,7 @@
           content: '';
           position: absolute;
           bottom: 100%;
-          right: 133px;
+          right: 112px;
           @include triangle('down-right', #fff, 13px, 12px);
         }
       }

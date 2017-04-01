@@ -849,14 +849,14 @@ body {
     &_green{
       color: $green;
       .live-meals__item-icon{
-        color: $green;
+        fill: $green;
       }
       +.live-meals__item-after{
         background-color: $green;
       }
     }
     &-icon{
-      color: #d5d5d5;
+      fill: #d5d5d5;
     }
     &-like{
     }
